@@ -11,87 +11,154 @@ const Index = () => {
         {/* Hero Section */}
         <section className="mb-12">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight mb-6">
-            Before You Send Any Traffic, Read This <span className="text-muted-foreground">(Most Beginners Ignore It)</span>
+            Your Store Is Ready. <span className="text-muted-foreground">Most People Fail in the Next Step.</span>
           </h1>
           
           <div className="space-y-1 mb-8">
-            <p className="text-lg md:text-xl text-foreground">You already bought the store.</p>
-            <p className="text-lg md:text-xl text-muted-foreground">This makes sure you don't break it with traffic — paid or organic.</p>
+            <p className="text-lg md:text-xl text-foreground">You didn't buy a store problem.</p>
+            <p className="text-lg md:text-xl text-muted-foreground">You bought a traffic decision problem — and this closes the gap.</p>
           </div>
-
-          <WarningBox title="Important">
-            Whether traffic comes from ads, TikTok, Instagram, SEO, or influencers — sending traffic without a launch safeguard is the fastest way beginners lose money and quit.
-          </WarningBox>
         </section>
 
-        {/* Section 1: The Fear Anchor */}
+        {/* Mechanism Visual Callout */}
         <section className="mb-14">
-          <h2 className="section-heading">What Usually Happens After This Point</h2>
+          <div className="border-2 border-primary rounded-lg p-6 md:p-8">
+            <h2 className="text-2xl md:text-3xl font-bold text-primary mb-4">
+              The Traffic Readiness Gap
+            </h2>
+            <p className="text-lg text-foreground mb-4">
+              The short window between a store being built<br />
+              and traffic being sent — where most beginners lose momentum, money, or confidence.
+            </p>
+            <p className="text-muted-foreground">
+              This is not about ads vs organic.<br />
+              It's about sending any traffic the right way, the first time.
+            </p>
+          </div>
+
+          {/* Visual Timeline */}
+          <div className="flex items-center justify-center gap-2 md:gap-4 mt-8 text-sm md:text-base">
+            <div className="bg-card border border-border rounded-lg px-4 py-2 text-center">
+              <span className="text-foreground font-medium">Store Built</span>
+            </div>
+            <div className="text-muted-foreground">→</div>
+            <div className="bg-primary text-primary-foreground rounded-lg px-4 py-2 text-center font-bold">
+              Traffic Readiness Gap
+            </div>
+            <div className="text-muted-foreground">→</div>
+            <div className="bg-card border border-border rounded-lg px-4 py-2 text-center">
+              <span className="text-foreground font-medium">Scale</span>
+            </div>
+          </div>
+        </section>
+
+        {/* Section 1: What Goes Wrong */}
+        <section className="mb-14">
+          <h2 className="section-heading">Where Things Break — Even With a Good Store</h2>
           
           <div className="space-y-4">
-            <p className="body-text">Most people do one of two things next.</p>
             <p className="body-text">
-              They start pushing traffic — ads, TikTok, reels, SEO — without knowing what actually needs to be checked first.
+              Most beginners don't fail because their store is bad.
             </p>
             <p className="body-text">
-              Or they overthink everything and never send traffic at all.
+              They fail because they don't know how to interpret what happens after traffic hits.
             </p>
+            <p className="body-text">They don't know:</p>
+            <ul className="space-y-2 ml-4 mb-4">
+              <li className="body-text">• What numbers matter</li>
+              <li className="body-text">• What's noise vs signal</li>
+              <li className="body-text">• When to wait vs change something</li>
+            </ul>
             <p className="body-text">
-              Both lead to the same outcome: wasted time, lost momentum, and blaming the store.
+              So they either panic… or stall.
             </p>
             <p className="text-foreground font-medium mt-6">
-              Traffic isn't the problem.<br />
-              Sending traffic incorrectly is.
+              Both kill momentum.
             </p>
           </div>
         </section>
 
         {/* Section 2: The Checklist */}
         <section className="mb-14">
-          <h2 className="section-heading">Do NOT Send Traffic Until These Are Checked</h2>
+          <h2 className="section-heading">Before Sending Any Traffic, These Decisions Must Be Clear</h2>
           
           <div className="bg-card border border-border rounded-lg p-6 mb-6">
-            <ChecklistItem>Product page passes basic trust test</ChecklistItem>
-            <ChecklistItem>Offer math makes sense for conversions</ChecklistItem>
-            <ChecklistItem>Shipping expectations won't trigger refunds</ChecklistItem>
-            <ChecklistItem>Tracking is set up (even for organic data)</ChecklistItem>
-            <ChecklistItem>You know exactly what result means "working"</ChecklistItem>
+            <ChecklistItem>You know what early success actually looks like</ChecklistItem>
+            <ChecklistItem>You know what result means "keep going" vs "stop"</ChecklistItem>
+            <ChecklistItem>You know what NOT to touch during the first test</ChecklistItem>
+            <ChecklistItem>You know how much data is "enough" before changing anything</ChecklistItem>
+            <ChecklistItem>You know how to avoid false negatives from organic or paid traffic</ChecklistItem>
           </div>
           
-          <p className="text-foreground font-medium">
-            If even one of these is wrong, traffic won't fail quietly — it fails expensively or invisibly.
+          <p className="text-foreground">
+            The store is built.<br />
+            <span className="font-medium">This makes sure you don't misread the results.</span>
           </p>
         </section>
 
         {/* Section 3: Mistake Amplification */}
         <section className="mb-14">
-          <h2 className="section-heading">The 3 Mistakes That Kill Momentum Early</h2>
+          <h2 className="section-heading">The 3 Mistakes That Waste the First Traffic Window</h2>
           
           <ul className="mb-6">
-            <MistakeItem>Sending traffic before the store is actually ready</MistakeItem>
-            <MistakeItem>Changing things randomly based on emotion</MistakeItem>
-            <MistakeItem>Following mixed advice without a clear launch rule</MistakeItem>
+            <MistakeItem>Treating the first traffic like a verdict instead of data</MistakeItem>
+            <MistakeItem>Changing things before enough signals exist</MistakeItem>
+            <MistakeItem>Mixing strategies instead of following one clear rule-set</MistakeItem>
           </ul>
           
           <p className="body-text">
-            Store Launch Protection exists so you don't learn these lessons after wasting weeks or money.
+            Store Launch Protection exists to protect this window — once it's gone, momentum is harder to recover.
           </p>
         </section>
 
-        {/* Section 4: What They Get */}
+        {/* Section 4: Value Ladder Context */}
+        <section className="mb-14">
+          <h2 className="section-heading">Where This Fits in the Bigger Picture</h2>
+          
+          <p className="body-text mb-6">This is the missing piece.</p>
+          
+          <div className="space-y-4 mb-6">
+            <div className="flex items-start gap-3">
+              <span className="text-primary">✔</span>
+              <div>
+                <span className="text-foreground">You already have:</span>
+                <span className="text-muted-foreground ml-2">A professionally built store</span>
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <span className="text-primary">✔</span>
+              <div>
+                <span className="text-foreground">This gives you:</span>
+                <span className="text-muted-foreground ml-2">Clarity on your first traffic decisions</span>
+              </div>
+            </div>
+            <div className="flex items-start gap-3 text-muted-foreground">
+              <span>→</span>
+              <div>
+                <span>Later comes:</span>
+                <span className="ml-2">Scaling · Testing angles · Speed and leverage</span>
+              </div>
+            </div>
+          </div>
+          
+          <p className="text-foreground font-medium">
+            This step exists so you don't sabotage the foundation.
+          </p>
+        </section>
+
+        {/* Section 5: What They Get */}
         <section className="mb-14">
           <h2 className="section-heading">What This Actually Gives You</h2>
           
           <ul className="mb-6">
-            <BenefitItem>A pass/fail launch checklist (works for ads and organic)</BenefitItem>
-            <BenefitItem>Clear rules for sending your first traffic safely</BenefitItem>
+            <BenefitItem>A traffic decision framework (ads or organic)</BenefitItem>
+            <BenefitItem>Clear launch rules for the first test window</BenefitItem>
             <BenefitItem>One proven static ad + one UGC script (optional use)</BenefitItem>
-            <BenefitItem>Exact signals that tell you "this is working" vs "stop"</BenefitItem>
+            <BenefitItem>Exact signals that tell you "continue" vs "change"</BenefitItem>
           </ul>
           
           <p className="text-foreground">
-            Use ads. Use organic. Use both.<br />
-            <span className="text-muted-foreground">This just makes sure you're not guessing.</span>
+            No hype. No guessing. Just correct decisions at the most sensitive stage.
           </p>
         </section>
 
@@ -110,7 +177,7 @@ const Index = () => {
         {/* CTA Section */}
         <section className="text-center">
           <button className="cta-button mb-4">
-            Protect My Store Before Sending Traffic
+            Protect My First Traffic Decisions
           </button>
           
           <p className="micro-text mb-6">
@@ -118,7 +185,7 @@ const Index = () => {
           </p>
           
           <p className="text-sm text-muted-foreground italic">
-            You can skip this — just understand you'll be sending traffic without a safety net.
+            Skipping this doesn't break the store — it risks misreading what happens next.
           </p>
         </section>
 
