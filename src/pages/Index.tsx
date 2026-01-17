@@ -1,7 +1,9 @@
+import DecisionSystemDemo from '@/components/DecisionSystemDemo';
+
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
-      <div className="max-w-2xl mx-auto px-6 py-16 md:py-24">
+      <div className="max-w-3xl mx-auto px-6 py-16 md:py-24">
         
         {/* 1️⃣ HERO — ORIENTATION */}
         <section className="mb-12 animate-section animate-delay-1">
@@ -80,6 +82,22 @@ const Index = () => {
           </p>
         </section>
 
+        {/* 4️⃣ PAIN SECTION */}
+        <section className="mb-14 animate-section">
+          <h2 className="section-heading">Why Most $20 Stores Never Get Past This Step</h2>
+          
+          <div className="space-y-4 mb-6">
+            <p className="fear-question">"I got clicks but no sales — is it broken?"</p>
+            <p className="fear-question">"Should I change the product already?"</p>
+            <p className="fear-question">"Maybe this doesn't work…"</p>
+          </div>
+          
+          <p className="text-foreground text-lg">
+            These aren't failures.<br />
+            <span className="font-medium">They're what happens without a checkpoint.</span>
+          </p>
+        </section>
+
         {/* MECHANISM DEFINITION BOX */}
         <section className="mb-14 animate-section">
           <div className="bg-card border-2 border-primary/50 rounded-lg p-5 md:p-6 text-center">
@@ -92,6 +110,9 @@ const Index = () => {
             </p>
           </div>
         </section>
+
+        {/* 🔥 DECISION SYSTEM DEMO */}
+        <DecisionSystemDemo />
 
         {/* WHAT YOU'RE ACTUALLY GETTING ACCESS TO */}
         <section className="mb-14 animate-section">
@@ -204,7 +225,7 @@ const Index = () => {
 
           {/* CTA Button */}
           <button className="cta-button mb-4">
-            Pass the First Traffic Checkpoint — $37
+            Pass the First Traffic Checkpoint™ — $37
           </button>
           
           <p className="micro-text mb-5">
