@@ -80,56 +80,109 @@ const Index = () => {
           </p>
         </section>
 
-        {/* 4️⃣ PAIN SECTION */}
+        {/* MECHANISM DEFINITION BOX */}
         <section className="mb-14 animate-section">
-          <h2 className="section-heading">Why Most $20 Stores Never Get Past This Step</h2>
+          <div className="bg-card border-2 border-primary/50 rounded-lg p-5 md:p-6 text-center">
+            <h3 className="text-xl md:text-2xl font-bold text-primary mb-2">
+              The First Traffic Checkpoint™
+            </h3>
+            <p className="text-muted-foreground text-base md:text-lg">
+              A single decision system that tells you whether to keep going, wait, or stop —<br />
+              before emotions, opinions, or random advice take over.
+            </p>
+          </div>
+        </section>
+
+        {/* WHAT YOU'RE ACTUALLY GETTING ACCESS TO */}
+        <section className="mb-14 animate-section">
+          <h2 className="section-heading">What You're Actually Getting Access To</h2>
           
-          <div className="space-y-4 mb-6">
-            <p className="fear-question">"I got clicks but no sales — is it broken?"</p>
-            <p className="fear-question">"Should I change the product already?"</p>
-            <p className="fear-question">"Maybe this doesn't work…"</p>
+          <div className="bg-card border border-primary rounded-lg p-5 md:p-6 mb-6">
+            <p className="text-lg md:text-xl font-bold text-primary mb-2">
+              The First Traffic Checkpoint™
+            </p>
+            <p className="text-foreground">
+              A simple, step-by-step decision system you follow after traffic hits your store.
+            </p>
+            <p className="text-muted-foreground mt-3">
+              This checkpoint tells you:<br />
+              <span className="text-foreground">what result matters,</span><br />
+              <span className="text-foreground">what doesn't matter yet,</span><br />
+              <span className="text-foreground">and what not to touch so you don't ruin momentum.</span>
+            </p>
+            <p className="text-foreground font-medium mt-4 italic">
+              Then — and this is important — everything below becomes obvious.
+            </p>
           </div>
           
-          <p className="text-foreground text-lg">
-            These aren't failures.<br />
-            <span className="font-medium">They're what happens without a checkpoint.</span>
+          <ul className="space-y-5 mb-8">
+            <li className="pain-bullet">
+              <p className="text-lg">
+                <span className="text-primary font-semibold">A clear "pass / wait / stop" decision</span><br />
+                <span className="text-muted-foreground">so you're never guessing what to do next.</span>
+              </p>
+            </li>
+            <li className="pain-bullet">
+              <p className="text-lg">
+                <span className="text-primary font-semibold">Rules for what you are NOT allowed to change yet</span><br />
+                <span className="text-muted-foreground">so you don't sabotage a product too early.</span>
+              </p>
+            </li>
+            <li className="pain-bullet">
+              <p className="text-lg">
+                <span className="text-primary font-semibold">A definition of what "too early" actually means</span><br />
+                <span className="text-muted-foreground">so you don't mistake normal early results for failure.</span>
+              </p>
+            </li>
+            <li className="pain-bullet">
+              <p className="text-lg">
+                <span className="text-primary font-semibold">One calm decision point</span><br />
+                <span className="text-muted-foreground">instead of reacting emotionally after every click.</span>
+              </p>
+            </li>
+          </ul>
+          
+          <p className="text-foreground text-lg font-medium">
+            You're not buying information.<br />
+            You're buying a checkpoint that tells you what to do — and when.
           </p>
         </section>
 
-        {/* 5️⃣ WHAT THIS PREVENTS */}
+        {/* WHAT THE CHECKPOINT PREVENTS */}
         <section className="mb-14 animate-section bg-card border border-border rounded-xl p-6 md:p-8">
           <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-8">
-            What This Prevents From Happening
+            What the First Traffic Checkpoint™ Prevents
           </h2>
           
           <div className="space-y-5 mb-8">
             <div className="pain-bullet">
               <p className="text-lg md:text-xl">
-                <span className="text-primary font-semibold">Thinking your store is broken</span>
-                <span className="text-muted-foreground"> when it's just too early</span>
+                <span className="text-primary font-semibold">Thinking your store is broken</span><br />
+                <span className="text-muted-foreground">because you didn't pass the checkpoint yet</span>
               </p>
             </div>
             <div className="pain-bullet">
               <p className="text-lg md:text-xl">
-                <span className="text-primary font-semibold">Changing products</span>
-                <span className="text-muted-foreground"> before enough data exists</span>
+                <span className="text-primary font-semibold">Changing products before enough data exists</span><br />
+                <span className="text-muted-foreground">because you didn't know you were still early</span>
               </p>
             </div>
             <div className="pain-bullet">
               <p className="text-lg md:text-xl">
-                <span className="text-primary font-semibold">Stopping after a few clicks</span>
-                <span className="text-muted-foreground"> because you didn't know what "normal" looks like</span>
+                <span className="text-primary font-semibold">Stopping after a few clicks</span><br />
+                <span className="text-muted-foreground">because you didn't know what "normal" looks like at the start</span>
               </p>
             </div>
             <div className="pain-bullet">
               <p className="text-lg md:text-xl">
-                <span className="text-primary font-semibold">Mixing advice from YouTube, TikTok, and Reddit</span>
+                <span className="text-primary font-semibold">Mixing advice from YouTube, TikTok, and Reddit</span><br />
+                <span className="text-muted-foreground">because you had no single rule-set to follow</span>
               </p>
             </div>
             <div className="pain-bullet">
               <p className="text-lg md:text-xl">
-                <span className="text-primary font-semibold">Wasting your first traffic opportunity</span>
-                <span className="text-muted-foreground"> and losing confidence</span>
+                <span className="text-primary font-semibold">Wasting your first traffic opportunity</span><br />
+                <span className="text-muted-foreground">and losing confidence before momentum ever forms</span>
               </p>
             </div>
           </div>
@@ -137,40 +190,12 @@ const Index = () => {
           <div className="border-t border-border pt-6">
             <p className="text-lg text-foreground">
               Your store is professionally built.<br />
-              <span className="font-medium">This makes sure you don't quit before it ever has a chance to work.</span>
+              <span className="font-medium">The First Traffic Checkpoint™ makes sure you don't misinterpret what happens next and quit before the store ever has a chance to work.</span>
             </p>
           </div>
         </section>
 
-        {/* 6️⃣ TRANSLATED VALUE */}
-        <section className="mb-14 animate-section">
-          <h2 className="section-heading">What You're Actually Buying for $37</h2>
-          
-          <ul className="space-y-3 mb-6">
-            <li className="flex items-start gap-3">
-              <span className="text-primary mt-1">✓</span>
-              <span className="text-foreground text-lg">Knowing when to keep going vs stop</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <span className="text-primary mt-1">✓</span>
-              <span className="text-foreground text-lg">Knowing what not to touch at the start</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <span className="text-primary mt-1">✓</span>
-              <span className="text-foreground text-lg">Knowing whether results mean "early" or "failed"</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <span className="text-primary mt-1">✓</span>
-              <span className="text-foreground text-lg">Knowing you're not guessing</span>
-            </li>
-          </ul>
-          
-          <p className="text-foreground font-medium text-lg">
-            So instead of reacting emotionally, you make one calm, correct decision.
-          </p>
-        </section>
-
-        {/* 7️⃣ + 8️⃣ URGENCY + CTA */}
+        {/* URGENCY + CTA */}
         <section className="text-center animate-section">
           {/* Urgency Line */}
           <p className="text-muted-foreground mb-6">
