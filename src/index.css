@@ -137,4 +137,44 @@
   .comparison-block {
     @apply bg-card border-2 border-primary rounded-lg p-6 text-center;
   }
+
+  .price-pill {
+    @apply inline-block bg-primary text-primary-foreground font-bold px-4 py-2 rounded-full text-sm md:text-base;
+  }
+
+  .checkpoint-box {
+    @apply border-2 border-primary rounded-xl p-6 md:p-8 animate-pulse-glow;
+  }
+
+  .urgency-bar {
+    @apply w-full bg-card border border-border rounded-lg px-4 py-3 text-center text-sm text-muted-foreground mb-4;
+  }
+
+  .fear-question {
+    @apply text-foreground italic py-2 pl-4 border-l-2 border-primary/50;
+  }
+
+  .animate-section {
+    @apply opacity-0 animate-fade-in-up;
+  }
+
+  .animate-delay-1 {
+    animation-delay: 0.1s;
+  }
+
+  .animate-delay-2 {
+    animation-delay: 0.2s;
+  }
+
+  .animate-delay-3 {
+    animation-delay: 0.3s;
+  }
+
+  .animate-delay-4 {
+    animation-delay: 0.4s;
+  }
+
+  .you-are-here {
+    @apply animate-highlight-pulse;
+  }
 }

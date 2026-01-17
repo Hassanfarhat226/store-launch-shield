@@ -1,6 +1,4 @@
-import WarningBox from "@/components/WarningBox";
 import ChecklistItem from "@/components/ChecklistItem";
-import MistakeItem from "@/components/MistakeItem";
 import BenefitItem from "@/components/BenefitItem";
 
 const Index = () => {
@@ -9,77 +7,95 @@ const Index = () => {
       <div className="max-w-2xl mx-auto px-6 py-16 md:py-24">
         
         {/* Hero Section */}
-        <section className="mb-12">
+        <section className="mb-10 animate-section animate-delay-1">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight mb-6">
-            Your Store Is Ready. <span className="text-muted-foreground">Most People Fail in the Next Step.</span>
+            Your Store Is Built.<br />
+            <span className="text-muted-foreground">This Is the Checkpoint Most Beginners Skip.</span>
           </h1>
           
-          <div className="space-y-1 mb-8">
-            <p className="text-lg md:text-xl text-foreground">You didn't buy a store problem.</p>
-            <p className="text-lg md:text-xl text-muted-foreground">You bought a traffic decision problem — and this closes the gap.</p>
+          <p className="text-lg md:text-xl text-muted-foreground mb-6">
+            Before you send any traffic — ads, TikTok, SEO, or influencers —<br />
+            this makes sure you don't misread what happens and quit too early.
+          </p>
+
+          {/* Price Anchor */}
+          <div className="mb-8">
+            <span className="price-pill">
+              One-Time Store Launch Protection — $37
+            </span>
           </div>
         </section>
 
-        {/* Mechanism Visual Callout */}
-        <section className="mb-14">
-          <div className="border-2 border-primary rounded-lg p-6 md:p-8">
-            <h2 className="text-2xl md:text-3xl font-bold text-primary mb-4">
-              The Traffic Readiness Gap
-            </h2>
+        {/* Mechanism Hero Box */}
+        <section className="mb-14 animate-section animate-delay-2">
+          <div className="checkpoint-box">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
+                <svg className="w-6 h-6 text-primary-foreground" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <h2 className="text-2xl md:text-3xl font-bold text-primary">
+                The First Traffic Checkpoint™
+              </h2>
+            </div>
+            
             <p className="text-lg text-foreground mb-4">
-              The short window between a store being built<br />
-              and traffic being sent — where most beginners lose momentum, money, or confidence.
+              This is the moment after your store is built<br />
+              but before traffic hits it.
             </p>
-            <p className="text-muted-foreground">
-              This is not about ads vs organic.<br />
-              It's about sending any traffic the right way, the first time.
+            <p className="text-muted-foreground mb-4">
+              Most beginners lose money or confidence here —<br />
+              not because the store is bad,<br />
+              but because they don't know how to judge what's working.
+            </p>
+            <p className="text-foreground font-medium">
+              This checkpoint makes sure your first traffic gives you answers — not confusion.
             </p>
           </div>
 
-          {/* Visual Timeline */}
-          <div className="flex items-center justify-center gap-2 md:gap-4 mt-8 text-sm md:text-base">
-            <div className="bg-card border border-border rounded-lg px-4 py-2 text-center">
-              <span className="text-foreground font-medium">Store Built</span>
+          {/* Visual Diagram */}
+          <div className="mt-8">
+            <div className="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4 text-sm md:text-base">
+              <div className="bg-card border border-border rounded-lg px-4 py-3 text-center">
+                <span className="text-foreground font-medium">Store Built ✅</span>
+              </div>
+              <div className="text-muted-foreground rotate-90 md:rotate-0">→</div>
+              <div className="you-are-here bg-primary text-primary-foreground rounded-lg px-4 py-3 text-center font-bold border-2 border-primary">
+                <div className="text-xs uppercase tracking-wide mb-1 opacity-80">YOU ARE HERE</div>
+                <div>First Traffic Checkpoint ⚠️</div>
+              </div>
+              <div className="text-muted-foreground rotate-90 md:rotate-0">→</div>
+              <div className="bg-card border border-border rounded-lg px-4 py-3 text-center">
+                <span className="text-foreground font-medium">Traffic → Data → Scale</span>
+              </div>
             </div>
-            <div className="text-muted-foreground">→</div>
-            <div className="bg-primary text-primary-foreground rounded-lg px-4 py-2 text-center font-bold">
-              Traffic Readiness Gap
-            </div>
-            <div className="text-muted-foreground">→</div>
-            <div className="bg-card border border-border rounded-lg px-4 py-2 text-center">
-              <span className="text-foreground font-medium">Scale</span>
-            </div>
+            
+            <p className="text-center text-muted-foreground mt-6 text-sm md:text-base">
+              Skipping this step doesn't stop traffic —<br />
+              it just makes the results misleading.
+            </p>
           </div>
         </section>
 
-        {/* Section 1: What Goes Wrong */}
-        <section className="mb-14">
-          <h2 className="section-heading">Where Things Break — Even With a Good Store</h2>
+        {/* What This Actually Does */}
+        <section className="mb-14 animate-section animate-delay-3">
+          <h2 className="section-heading">What This Actually Does For You</h2>
           
-          <div className="space-y-4">
-            <p className="body-text">
-              Most beginners don't fail because their store is bad.
-            </p>
-            <p className="body-text">
-              They fail because they don't know how to interpret what happens after traffic hits.
-            </p>
-            <p className="body-text">They don't know:</p>
-            <ul className="space-y-2 ml-4 mb-4">
-              <li className="body-text">• What numbers matter</li>
-              <li className="body-text">• What's noise vs signal</li>
-              <li className="body-text">• When to wait vs change something</li>
-            </ul>
-            <p className="body-text">
-              So they either panic… or stall.
-            </p>
-            <p className="text-foreground font-medium mt-6">
-              Both kill momentum.
-            </p>
-          </div>
+          <ul className="space-y-3 mb-6">
+            <BenefitItem>Tells you exactly what to look at after your first traffic</BenefitItem>
+            <BenefitItem>Tells you what to ignore so you don't panic</BenefitItem>
+            <BenefitItem>Tells you when to keep going vs stop</BenefitItem>
+            <BenefitItem>Prevents changing things too early and killing momentum</BenefitItem>
+          </ul>
+          
+          <p className="text-foreground font-medium">
+            So instead of guessing, you know what the results actually mean.
+          </p>
         </section>
 
-        {/* Section 2: The Checklist */}
-        <section className="mb-14">
+        {/* The Checklist */}
+        <section className="mb-14 animate-section animate-delay-4">
           <h2 className="section-heading">Before Sending Any Traffic, These Decisions Must Be Clear</h2>
           
           <div className="bg-card border border-border rounded-lg p-6 mb-6">
@@ -96,61 +112,29 @@ const Index = () => {
           </p>
         </section>
 
-        {/* Section 3: Mistake Amplification */}
-        <section className="mb-14">
-          <h2 className="section-heading">The 3 Mistakes That Waste the First Traffic Window</h2>
+        {/* Beginner Fears Section */}
+        <section className="mb-14 animate-section">
+          <h2 className="section-heading">Why Most $20 Stores Never Get Past This Step</h2>
           
-          <ul className="mb-6">
-            <MistakeItem>Treating the first traffic like a verdict instead of data</MistakeItem>
-            <MistakeItem>Changing things before enough signals exist</MistakeItem>
-            <MistakeItem>Mixing strategies instead of following one clear rule-set</MistakeItem>
-          </ul>
-          
-          <p className="body-text">
-            Store Launch Protection exists to protect this window — once it's gone, momentum is harder to recover.
-          </p>
-        </section>
-
-        {/* Section 4: Value Ladder Context */}
-        <section className="mb-14">
-          <h2 className="section-heading">Where This Fits in the Bigger Picture</h2>
-          
-          <p className="body-text mb-6">This is the missing piece.</p>
-          
-          <div className="space-y-4 mb-6">
-            <div className="flex items-start gap-3">
-              <span className="text-primary">✔</span>
-              <div>
-                <span className="text-foreground">You already have:</span>
-                <span className="text-muted-foreground ml-2">A professionally built store</span>
-              </div>
-            </div>
-            <div className="flex items-start gap-3">
-              <span className="text-primary">✔</span>
-              <div>
-                <span className="text-foreground">This gives you:</span>
-                <span className="text-muted-foreground ml-2">Clarity on your first traffic decisions</span>
-              </div>
-            </div>
-            <div className="flex items-start gap-3 text-muted-foreground">
-              <span>→</span>
-              <div>
-                <span>Later comes:</span>
-                <span className="ml-2">Scaling · Testing angles · Speed and leverage</span>
-              </div>
-            </div>
+          <div className="space-y-3 mb-6">
+            <p className="fear-question">"I got clicks but no sales — is it broken?"</p>
+            <p className="fear-question">"Should I change the product already?"</p>
+            <p className="fear-question">"Maybe this doesn't work…"</p>
           </div>
           
+          <p className="body-text mb-2">
+            These questions aren't failures.
+          </p>
           <p className="text-foreground font-medium">
-            This step exists so you don't sabotage the foundation.
+            They're what happens without a checkpoint.
           </p>
         </section>
 
-        {/* Section 5: What They Get */}
-        <section className="mb-14">
-          <h2 className="section-heading">What This Actually Gives You</h2>
+        {/* What They Get */}
+        <section className="mb-14 animate-section">
+          <h2 className="section-heading">What's Inside</h2>
           
-          <ul className="mb-6">
+          <ul className="space-y-3 mb-6">
             <BenefitItem>A traffic decision framework (ads or organic)</BenefitItem>
             <BenefitItem>Clear launch rules for the first test window</BenefitItem>
             <BenefitItem>One proven static ad + one UGC script (optional use)</BenefitItem>
@@ -163,7 +147,7 @@ const Index = () => {
         </section>
 
         {/* Price Justification */}
-        <section className="mb-14">
+        <section className="mb-14 animate-section">
           <div className="comparison-block">
             <p className="text-lg text-foreground mb-2">
               Most beginners lose weeks — or burn $200–$500 — sending traffic incorrectly.
@@ -175,17 +159,22 @@ const Index = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="text-center">
+        <section className="text-center animate-section">
+          {/* Urgency Bar */}
+          <div className="urgency-bar">
+            This is a one-time add-on shown only right after your store is built.
+          </div>
+
           <button className="cta-button mb-4">
-            Protect My First Traffic Decisions
+            Pass the First Traffic Checkpoint — $37
           </button>
           
           <p className="micro-text mb-6">
-            One-time add-on · Instant access · No subscription
+            One-time · Instant access · No subscription
           </p>
           
-          <p className="text-sm text-muted-foreground italic">
-            Skipping this doesn't break the store — it risks misreading what happens next.
+          <p className="text-sm text-muted-foreground">
+            Skipping this means interpreting results on your own.
           </p>
         </section>
 
