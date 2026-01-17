@@ -181,4 +181,44 @@
   .pain-bullet {
     @apply pl-4 border-l-4 border-primary/60 py-1;
   }
+
+  .input-card {
+    @apply relative;
+  }
+
+  .input-chip {
+    @apply select-none;
+  }
+
+  .input-chip.active {
+    @apply shadow-lg;
+    box-shadow: 0 0 15px 3px hsl(var(--primary) / 0.4);
+  }
+
+  .output-card {
+    @apply relative;
+    box-shadow: 0 0 30px 0 hsl(var(--primary) / 0.15);
+  }
+
+  .result-pill {
+    animation: pulse-result 2s ease-in-out infinite;
+  }
+
+  .deliverable-card {
+    @apply transition-all duration-300;
+  }
+
+  .deliverable-card:hover {
+    @apply transform -translate-y-1;
+    box-shadow: 0 4px 20px 0 hsl(var(--primary) / 0.2);
+  }
+}
+
+@keyframes pulse-result {
+  0%, 100% {
+    box-shadow: 0 0 15px 3px hsl(var(--primary) / 0.4);
+  }
+  50% {
+    box-shadow: 0 0 25px 8px hsl(var(--primary) / 0.6);
+  }
 }
