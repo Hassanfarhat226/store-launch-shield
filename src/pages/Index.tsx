@@ -18,7 +18,7 @@ const Index = () => {
           </p>
 
           {/* Price Anchor - Visible Immediately */}
-          <div className="inline-block bg-primary text-primary-foreground font-bold px-5 py-2.5 rounded-full text-base md:text-lg">
+          <div className="inline-block bg-primary text-primary-foreground font-bold px-5 py-2.5 rounded-full text-base md:text-lg text-center">
             One-Time Store Launch Protection — $37
           </div>
         </section>
