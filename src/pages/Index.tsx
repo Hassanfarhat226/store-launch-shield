@@ -130,19 +130,69 @@ const Index = () => {
           </p>
         </section>
 
-        {/* What They Get */}
+        {/* What This Prevents */}
+        <section className="mb-14 animate-section bg-card border border-border rounded-xl p-6 md:p-8">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-3">
+            What This Prevents From Happening
+          </h2>
+          <p className="text-muted-foreground mb-8">
+            Most beginners quit here — not because the store is bad, but because they misread the first results.
+          </p>
+          
+          <div className="space-y-6 mb-8">
+            <div className="pain-bullet">
+              <p className="text-lg md:text-xl">
+                <span className="text-primary font-semibold">Thinking your store is broken</span><br />
+                <span className="text-muted-foreground">when you simply didn't give it enough data yet.</span>
+              </p>
+            </div>
+            <div className="pain-bullet">
+              <p className="text-lg md:text-xl">
+                <span className="text-primary font-semibold">Changing products too early</span><br />
+                <span className="text-muted-foreground">and never knowing if the first one could have worked.</span>
+              </p>
+            </div>
+            <div className="pain-bullet">
+              <p className="text-lg md:text-xl">
+                <span className="text-primary font-semibold">Stopping after a few clicks</span><br />
+                <span className="text-muted-foreground">because you didn't know what "normal" looks like at the start.</span>
+              </p>
+            </div>
+            <div className="pain-bullet">
+              <p className="text-lg md:text-xl">
+                <span className="text-primary font-semibold">Mixing advice from YouTube, TikTok, and Reddit</span><br />
+                <span className="text-muted-foreground">and accidentally canceling out your own progress.</span>
+              </p>
+            </div>
+            <div className="pain-bullet">
+              <p className="text-lg md:text-xl">
+                <span className="text-primary font-semibold">Wasting your first traffic opportunity</span><br />
+                <span className="text-muted-foreground">and losing confidence before you ever get momentum.</span>
+              </p>
+            </div>
+          </div>
+          
+          <div className="border-t border-border pt-6">
+            <p className="text-lg text-foreground">
+              Your store is professionally built.<br />
+              <span className="font-medium">This makes sure you don't misinterpret what happens next and quit before the store ever has a chance to work.</span>
+            </p>
+          </div>
+        </section>
+
+        {/* What You're Actually Buying */}
         <section className="mb-14 animate-section">
-          <h2 className="section-heading">What's Inside</h2>
+          <h2 className="section-heading">What You're Actually Buying for $37</h2>
           
           <ul className="space-y-3 mb-6">
-            <BenefitItem>A traffic decision framework (ads or organic)</BenefitItem>
-            <BenefitItem>Clear launch rules for the first test window</BenefitItem>
-            <BenefitItem>One proven static ad + one UGC script (optional use)</BenefitItem>
-            <BenefitItem>Exact signals that tell you "continue" vs "change"</BenefitItem>
+            <BenefitItem>Knowing when to keep going vs stop</BenefitItem>
+            <BenefitItem>Knowing what not to touch during the first test</BenefitItem>
+            <BenefitItem>Knowing whether results mean "early" or "failed"</BenefitItem>
+            <BenefitItem>Knowing you're not guessing</BenefitItem>
           </ul>
           
-          <p className="text-foreground">
-            No hype. No guessing. Just correct decisions at the most sensitive stage.
+          <p className="text-foreground font-medium">
+            So instead of reacting emotionally, you make one calm, correct decision.
           </p>
         </section>
 

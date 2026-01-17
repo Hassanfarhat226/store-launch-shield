@@ -177,4 +177,8 @@
   .you-are-here {
     @apply animate-highlight-pulse;
   }
+
+  .pain-bullet {
+    @apply pl-4 border-l-4 border-primary/60 py-1;
+  }
 }
