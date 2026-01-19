@@ -220,12 +220,12 @@ const DecisionSystemDemo = () => {
         </p>
       </div>
 
-      {/* Two-Column Layout */}
-      <div className="grid lg:grid-cols-[45%_55%] gap-4 lg:gap-6 mb-8">
+      {/* Two-Panel Layout */}
+      <div className="flex flex-col min-[901px]:flex-row gap-6 mb-8">
         
         {/* LEFT PANEL: INPUT SIMULATOR */}
         <div 
-          className="rounded-2xl p-5 md:p-6 border border-white/10 relative overflow-hidden"
+          className="w-full min-[901px]:w-1/2 rounded-2xl p-5 md:p-6 border border-white/10 relative overflow-hidden"
           style={{ backgroundColor: 'rgba(255,255,255,0.03)' }}
         >
           <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent"></div>
@@ -268,23 +268,14 @@ const DecisionSystemDemo = () => {
           ))}
         </div>
 
-        {/* Mobile Arrow */}
-        <div className="flex lg:hidden justify-center py-3">
-          <div className="flex flex-col items-center gap-1">
-            <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
-            <span className="w-2 h-2 rounded-full bg-primary animate-pulse" style={{ animationDelay: '0.15s' }}></span>
-            <span className="text-primary text-xl">↓</span>
-          </div>
-        </div>
-
         {/* RIGHT PANEL: DECISION OUTPUT (TEASER) */}
         <div 
-          className="rounded-2xl p-5 md:p-6 border border-primary/30 relative overflow-hidden"
+          className="w-full min-[901px]:w-1/2 rounded-2xl p-5 md:p-6 border border-primary/30 relative overflow-hidden min-[901px]:sticky min-[901px]:top-6 min-[901px]:max-h-[calc(100vh-48px)] min-[901px]:overflow-auto"
           style={{ backgroundColor: 'rgba(255,255,255,0.03)' }}
         >
           <div className="absolute top-0 left-0 right-0 h-0.5 bg-primary"></div>
           
-          <div className="text-xs uppercase tracking-widest text-muted-foreground mb-5 font-medium sticky top-0 z-10 pb-2" style={{ backgroundColor: 'rgba(255,255,255,0.03)' }}>
+          <div className="text-xs uppercase tracking-widest text-muted-foreground mb-5 font-medium min-[901px]:sticky min-[901px]:top-0 z-10 pb-2" style={{ backgroundColor: 'rgba(255,255,255,0.03)' }}>
             Step 2: Get your exact next move
           </div>
 
