@@ -230,15 +230,21 @@ const DecisionSystemDemo = () => {
         >
           <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent"></div>
           
-          <div className="text-xs uppercase tracking-widest text-muted-foreground mb-5 font-medium">
+          <div className="text-xs uppercase tracking-widest text-muted-foreground mb-2 font-medium">
             Step 1: Tell us what you did
           </div>
+          <p className="text-xs text-muted-foreground/70 mb-5">
+            Select ONE option in each section to see what the system would decide next.
+          </p>
 
           {inputGroups.map((group) => (
             <div key={group.key} className="mb-5 last:mb-0">
-              <div className="flex items-center gap-2 text-sm text-foreground mb-1 font-medium">
-                <Check className="w-4 h-4 text-green-500" />
-                <span>{group.label}</span>
+              <div className="flex items-center justify-between mb-1">
+                <div className="flex items-center gap-2 text-sm text-foreground font-medium">
+                  <Check className={`w-4 h-4 ${inputs[group.key] !== null ? 'text-green-500' : 'text-muted-foreground/30'}`} />
+                  <span>{group.label}</span>
+                </div>
+                <span className="text-[10px] uppercase tracking-wider text-muted-foreground/50">Choose one</span>
               </div>
               <p className="text-xs text-muted-foreground/60 mb-2.5 ml-6 italic">
                 {group.hint}
@@ -383,12 +389,12 @@ const DecisionSystemDemo = () => {
               <div className="pt-2">
                 <a 
                   href="#cta"
-                  className="w-full flex items-center justify-center gap-2 bg-primary text-primary-foreground font-bold py-3 px-6 rounded-lg hover:shadow-[0_0_30px_rgba(255,213,0,0.4)] transition-all duration-300"
+                  className="w-full flex items-center justify-center text-center bg-primary text-primary-foreground font-bold py-3.5 px-6 rounded-lg hover:shadow-[0_0_30px_rgba(255,213,0,0.4)] transition-all duration-300"
                 >
-                  Unlock the Full First Traffic Checkpoint™
+                  Unlock Your Exact Next Move
                 </a>
                 <p className="text-center text-xs text-muted-foreground/50 mt-2">
-                  One-time decision system • Use it on every store
+                  One-time decision system • Use on every store
                 </p>
               </div>
             </>
