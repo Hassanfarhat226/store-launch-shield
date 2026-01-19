@@ -1,4 +1,4 @@
-import { useState, useCallback, useEffect } from 'react';
+import { useState, useCallback, useEffect, useMemo } from 'react';
 import { Check, Lock, AlertTriangle, ChevronRight } from 'lucide-react';
 
 // Types for the decision system
