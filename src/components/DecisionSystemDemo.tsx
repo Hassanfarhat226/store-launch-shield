@@ -16,52 +16,50 @@ const DecisionSystemDemo = () => {
   const [isProcessing, setIsProcessing] = useState(false);
   const [processingCheckpoint, setProcessingCheckpoint] = useState<number | null>(null);
   const [showResult, setShowResult] = useState(false);
-  const [showReadMore, setShowReadMore] = useState(false);
 
   const checkpoints: Checkpoint[] = [
     {
       id: 0,
-      title: "What's happening right now?",
-      subtext: "This is completely normal right after a store is built.",
+      title: "Where are you with traffic?",
+      subtext: "Most people are here after their first store.",
       options: [
-        "I'm getting traffic, but no sales",
-        "I see some activity, but I don't know what it means",
-        "Nothing meaningful has happened yet",
-        "I don't know what to do next"
+        "I haven't sent any traffic yet",
+        "I'm scared to run ads",
+        "I tried traffic but don't know if I did it right",
+        "I'm sending traffic but don't know what to change",
+        "I want free traffic before paid ads"
       ],
-      highlightIndex: 3,
+      highlightIndex: 0,
       highlightLabel: "Most common"
     },
     {
       id: 1,
-      title: "Where is traffic coming from (or will come from)?",
-      subtext: "Different traffic sources require different early decisions.",
+      title: "What traffic are you thinking about?",
+      subtext: "Select one option.",
       options: [
-        "Paid ads (Meta / TikTok / Google)",
-        "Organic (TikTok, Reels, Shorts)",
+        "Free traffic (TikTok, Reels, organic)",
+        "Paid ads (Meta, TikTok, Google)",
         "Influencers / shoutouts",
-        "I haven't sent traffic yet"
+        "I don't know — that's the problem"
       ]
     },
     {
       id: 2,
-      title: "How long has the store been live?",
-      subtext: "Timing determines whether a result is meaningful or misleading.",
+      title: "Where are you in the process?",
+      subtext: "Timing changes everything.",
       options: [
-        "Less than 48 hours",
-        "3–7 days",
-        "Over a week",
-        "I haven't launched yet"
+        "Haven't started yet",
+        "Just started",
+        "A few days in"
       ]
     }
   ];
 
-  const lockedSections = [
-    'The exact signal that flips this decision',
-    'The mistake that resets most stores here',
-    'What to change only after the signal appears',
-    'Why guessing here delays success by weeks',
-    'The move that kills otherwise winning products'
+  const lockedSteps = [
+    { step: 3, title: "Exactly how much traffic to send before deciding anything" },
+    { step: 4, title: "Free vs paid traffic — which one the system recommends for you" },
+    { step: 5, title: "The moment this decision flips — and what to do immediately" },
+    { step: 6, title: "The #1 traffic mistake beginners make in week one" }
   ];
 
   const handleOptionSelect = (checkpointId: number, optionIndex: number) => {
@@ -89,36 +87,30 @@ const DecisionSystemDemo = () => {
 
   return (
     <section className="mb-14 px-4 md:px-2">
-      {/* Header */}
+      {/* Hero Header */}
       <div className="text-center mb-8 md:mb-10 max-w-3xl mx-auto">
-        <h2 className="text-[1.75rem] leading-[1.2] sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 md:mb-5">
-          You Just Built the Store.<br />
-          <span className="text-primary">This Is the System That Tells You What To Do Next.</span>
+        <h2 className="text-[1.75rem] leading-[1.15] sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-5 md:mb-6">
+          You Built the Store.<br />
+          <span className="text-primary">Now Comes the Part That Actually Matters: Traffic.</span>
         </h2>
-        <p className="text-base sm:text-lg md:text-xl text-foreground/80 max-w-2xl mx-auto leading-relaxed mb-3">
-          This is a live preview of the First Traffic Checkpoint™ —<br className="hidden sm:block" />
-          the same system you'll use every time you launch or test a store.
+        <p className="text-base sm:text-lg md:text-xl text-foreground/90 max-w-2xl mx-auto leading-relaxed mb-4">
+          Most beginners don't fail because their store is bad.<br className="hidden sm:block" />
+          They fail because they don't know how to send traffic — or what kind.
         </p>
-        <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-xl mx-auto leading-relaxed">
-          You're not expected to "get results" yet.<br className="hidden sm:block" />
-          You're expected to interpret the right signals at the right time.
-        </p>
+        <div className="bg-secondary/30 border border-white/10 rounded-xl p-4 sm:p-5 max-w-lg mx-auto">
+          <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+            This system tells you exactly:<br />
+            <span className="text-foreground font-medium">when to send traffic</span> · <span className="text-foreground font-medium">what type to send</span> · <span className="text-foreground font-medium">what not to touch</span>
+          </p>
+        </div>
       </div>
 
-      {/* Why These Questions Look Simple */}
+      {/* Section Title */}
       {!showResult && (
-        <div className="max-w-2xl mx-auto mb-8 md:mb-10 bg-secondary/30 border border-white/10 rounded-xl p-5 md:p-6">
-          <p className="text-lg sm:text-xl md:text-xl font-semibold text-foreground mb-3">
-            Why these questions look simple
-          </p>
-          <p className="text-base sm:text-base md:text-lg text-muted-foreground leading-relaxed mb-3">
-            Early-stage stores don't fail because of complex problems.<br className="hidden sm:block" />
-            They fail because beginners misread early data and change the wrong thing.
-          </p>
-          <p className="text-base sm:text-base md:text-lg text-muted-foreground leading-relaxed">
-            This system doesn't guess.<br className="hidden sm:block" />
-            It classifies your situation and tells you what to do — or what NOT to touch.
-          </p>
+        <div className="max-w-2xl mx-auto mb-6 md:mb-8">
+          <h3 className="text-xl sm:text-2xl md:text-2xl font-bold text-foreground text-center mb-2">
+            Tell the system where you are with traffic
+          </h3>
         </div>
       )}
 
@@ -208,10 +200,10 @@ const DecisionSystemDemo = () => {
                         <div className="w-1.5 h-1.5 bg-primary rounded-full animate-pulse" style={{ animationDelay: '0.4s' }} />
                       </div>
                       <p className="text-sm text-foreground/70">
-                        Evaluating against early failure patterns…
+                        Analyzing traffic pattern…
                       </p>
                       <p className="text-xs text-muted-foreground/50 mt-1">
-                        Checking against similar store launches…
+                        Checking against first-time store data…
                       </p>
                     </div>
                   </div>
@@ -224,187 +216,105 @@ const DecisionSystemDemo = () => {
         {/* Result Panel */}
         {showResult && (
           <div className="animate-fade-in">
-            {/* Decision Badge - Action-Framed */}
+            {/* Decision Badge - Traffic Focused */}
             <div className="text-center mb-6 md:mb-8">
-              <span className="inline-flex flex-wrap items-center justify-center gap-2 sm:gap-3 px-5 sm:px-8 py-3 sm:py-4 rounded-full text-xl sm:text-xl md:text-2xl font-bold bg-primary text-primary-foreground shadow-[0_0_40px_rgba(255,213,0,0.45)]">
+              <span className="inline-flex flex-wrap items-center justify-center gap-2 sm:gap-3 px-5 sm:px-8 py-3 sm:py-4 rounded-full text-lg sm:text-xl md:text-2xl font-bold bg-primary text-primary-foreground shadow-[0_0_40px_rgba(255,213,0,0.45)]">
                 <AlertTriangle className="w-5 h-5 sm:w-6 sm:h-6" />
-                HOLD & OBSERVE
+                HOLD & PREPARE TRAFFIC
                 <span className="text-xs sm:text-sm font-medium opacity-90">(Action Required)</span>
               </span>
             </div>
 
-            {/* System Comparison Snapshot */}
+            {/* Badge Subtext */}
+            <div className="text-center mb-6 md:mb-8 max-w-lg mx-auto">
+              <p className="text-base sm:text-lg text-foreground/90 leading-relaxed">
+                This is not "do nothing."<br />
+                <span className="text-muted-foreground">This is "set traffic up correctly so you don't waste it."</span>
+              </p>
+            </div>
+
+            {/* Traffic Pattern Match */}
             <div className="bg-secondary/20 border border-white/5 rounded-xl p-4 sm:p-5 mb-6">
               <p className="text-base sm:text-lg font-semibold text-foreground mb-1">
-                System Comparison Snapshot
-              </p>
-              <p className="text-xs sm:text-sm text-muted-foreground/60 mb-4 sm:mb-5">
-                This decision is based on real outcomes — not opinion.
+                Traffic Pattern Match
               </p>
               
-              <div className="space-y-2 sm:space-y-2.5 font-mono text-xs sm:text-sm">
+              <div className="space-y-2 sm:space-y-2.5 font-mono text-xs sm:text-sm mt-4">
                 <div className="flex flex-wrap items-center gap-1.5 sm:gap-3">
                   <span className="w-1.5 h-1.5 bg-primary/60 rounded-full flex-shrink-0" />
-                  <span className="text-muted-foreground">Matched against:</span>
+                  <span className="text-muted-foreground">Compared against</span>
                   <span className="text-foreground font-semibold">10,367</span>
-                  <span className="text-muted-foreground/70">early-stage stores</span>
+                  <span className="text-muted-foreground/70">first-time stores</span>
                 </div>
                 <div className="w-full h-px bg-white/5" />
                 <div className="flex flex-wrap items-center gap-1.5 sm:gap-3">
                   <span className="w-1.5 h-1.5 bg-primary/60 rounded-full flex-shrink-0" />
-                  <span className="text-muted-foreground">Compared to:</span>
-                  <span className="text-foreground font-semibold">1,584</span>
-                  <span className="text-muted-foreground/70">stores launched in last 30 days</span>
-                </div>
-                <div className="w-full h-px bg-white/5" />
-                <div className="flex flex-wrap items-center gap-1.5 sm:gap-3">
-                  <span className="w-1.5 h-1.5 bg-primary/60 rounded-full flex-shrink-0" />
-                  <span className="text-muted-foreground">Pattern alignment:</span>
-                  <span className="text-foreground font-semibold">92%</span>
-                  <span className="text-muted-foreground/70 break-words">match to stores that delayed changes</span>
+                  <span className="text-foreground font-semibold">7,412</span>
+                  <span className="text-muted-foreground/70">had no traffic plan when they launched</span>
                 </div>
                 <div className="w-full h-px bg-white/5" />
                 <div className="flex flex-wrap items-center gap-1.5 sm:gap-3">
                   <span className="w-1.5 h-1.5 bg-red-500/60 rounded-full flex-shrink-0" />
-                  <span className="text-muted-foreground">False-negative risk:</span>
-                  <span className="text-red-400 font-semibold">High</span>
+                  <span className="text-foreground font-semibold">83%</span>
+                  <span className="text-muted-foreground/70">wasted traffic by changing the wrong thing first</span>
                 </div>
                 <div className="w-full h-px bg-white/5" />
                 <div className="flex flex-wrap items-center gap-1.5 sm:gap-3">
                   <span className="w-1.5 h-1.5 bg-primary/60 rounded-full flex-shrink-0" />
-                  <span className="text-muted-foreground">Decision confidence:</span>
-                  <span className="text-primary font-semibold">0.91</span>
+                  <span className="text-muted-foreground">Stores that followed the system reached clarity</span>
+                  <span className="text-primary font-semibold">2.6× faster</span>
                 </div>
               </div>
 
               <p className="text-xs text-muted-foreground/50 mt-5">
-                Full classification logic and thresholds unlock after purchase.
+                This system is designed specifically for first-time traffic decisions.
               </p>
-
-              {/* Locked micro-tease */}
-              <div className="flex items-center gap-2 mt-4 pt-4 border-t border-white/5">
-                <Lock className="w-3.5 h-3.5 text-muted-foreground/40" />
-                <span className="text-xs text-muted-foreground/40 blur-[1px] select-none">
-                  What the other 8% did differently
-                </span>
-              </div>
             </div>
 
-            {/* Required Next Action - Partial Preview */}
+            {/* Collapsible Steps */}
             <div className="bg-secondary/40 border border-primary/30 rounded-xl p-4 sm:p-6 mb-6">
               <p className="text-lg sm:text-xl md:text-xl font-bold text-foreground mb-4">
-                Your Required Next Action (Partial Preview)
+                Your Traffic Steps
               </p>
               
-              {/* Visible Steps */}
+              {/* Unlocked Steps */}
               <div className="space-y-3 mb-5">
                 <div className="flex items-start gap-3 p-4 bg-primary/10 border border-primary/20 rounded-lg">
                   <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <p className="text-sm md:text-base text-foreground">
-                    Keep traffic running unchanged for the next 48 hours
-                  </p>
+                  <div>
+                    <p className="text-sm font-semibold text-foreground mb-1">Step 1</p>
+                    <p className="text-sm md:text-base text-foreground/80">
+                      What this traffic decision means right now
+                    </p>
+                  </div>
                 </div>
                 <div className="flex items-start gap-3 p-4 bg-primary/10 border border-primary/20 rounded-lg">
                   <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <p className="text-sm md:text-base text-foreground">
-                    Monitor only clicks and add-to-carts
-                  </p>
+                  <div>
+                    <p className="text-sm font-semibold text-foreground mb-1">Step 2</p>
+                    <p className="text-sm md:text-base text-foreground/80">
+                      What NOT to change while sending traffic
+                    </p>
+                  </div>
                 </div>
               </div>
 
-              {/* Blurred Steps */}
+              {/* Locked Steps */}
               <div className="space-y-3">
-                <div className="flex items-center gap-3 p-4 bg-secondary/30 border border-white/10 rounded-lg">
-                  <Lock className="w-4 h-4 text-muted-foreground/40 flex-shrink-0" />
-                  <span className="text-sm text-muted-foreground/40 blur-[2px] select-none">
-                    Exact traffic threshold the system is waiting for
-                  </span>
-                </div>
-                <div className="flex items-center gap-3 p-4 bg-secondary/30 border border-white/10 rounded-lg">
-                  <Lock className="w-4 h-4 text-muted-foreground/40 flex-shrink-0" />
-                  <span className="text-sm text-muted-foreground/40 blur-[2px] select-none">
-                    The signal that flips this decision
-                  </span>
-                </div>
-                <div className="flex items-center gap-3 p-4 bg-secondary/30 border border-white/10 rounded-lg">
-                  <Lock className="w-4 h-4 text-muted-foreground/40 flex-shrink-0" />
-                  <span className="text-sm text-muted-foreground/40 blur-[2px] select-none">
-                    What action replaces "WAIT"
-                  </span>
-                </div>
-                <div className="flex items-center gap-3 p-4 bg-secondary/30 border border-white/10 rounded-lg">
-                  <Lock className="w-4 h-4 text-muted-foreground/40 flex-shrink-0" />
-                  <span className="text-sm text-muted-foreground/40 blur-[2px] select-none">
-                    What beginners do wrong at this exact stage
-                  </span>
-                </div>
-              </div>
-            </div>
-
-            {/* Read More Expand */}
-            {!showReadMore ? (
-              <button
-                onClick={() => setShowReadMore(true)}
-                className="w-full text-center py-3 text-sm text-primary hover:text-primary/80 transition-colors underline underline-offset-4 mb-6"
-              >
-                Read how the system knows this
-              </button>
-            ) : (
-              <div className="bg-secondary/20 border border-white/10 rounded-xl p-5 mb-6 animate-fade-in">
-                <p className="text-sm text-foreground/80 mb-3">
-                  This decision is based on:
-                </p>
-                <ul className="text-sm text-muted-foreground space-y-1.5 mb-3">
-                  <li>• traffic source behavior patterns</li>
-                  <li>• time-on-site distribution</li>
-                  <li>• early funnel compression</li>
-                  <li>• launch-stage misclassification risk</li>
-                </ul>
-                <p className="text-sm text-muted-foreground/60 blur-[3px] select-none">
-                  The algorithm weighs each factor against your specific traffic source and time window to determine whether
-                </p>
-              </div>
-            )}
-
-            {/* Locked Danger Sections */}
-            <div className="space-y-3 mb-8">
-              {lockedSections.map((section, idx) => (
-                <div 
-                  key={idx}
-                  className="group flex items-center justify-between p-5 rounded-xl bg-secondary/20 border border-white/10 cursor-not-allowed hover:border-red-500/30 transition-colors"
-                  title="Unlock to see exact thresholds and timing logic."
-                >
-                  <span className="text-base text-muted-foreground/40 blur-[2px] select-none">
-                    {section}
-                  </span>
-                  <Lock className="w-5 h-5 text-muted-foreground/30 group-hover:text-red-500/50 transition-colors" />
-                </div>
-              ))}
-            </div>
-
-            {/* Fork in the Road */}
-            <div className="bg-secondary/30 border border-white/10 rounded-xl p-4 sm:p-6 mb-8">
-              <p className="text-lg sm:text-xl md:text-xl font-bold text-foreground mb-3">
-                What happens next depends on ONE thing
-              </p>
-              <p className="text-sm sm:text-base text-muted-foreground mb-5">
-                The next step is different depending on what happens first.<br className="hidden sm:block" />
-                Most people guess. The system doesn't.
-              </p>
-              
-              <div className="space-y-3">
-                <div className="flex items-center gap-3 p-4 bg-secondary/40 border border-white/10 rounded-lg">
-                  <Lock className="w-4 h-4 text-muted-foreground/40 flex-shrink-0" />
-                  <span className="text-sm text-muted-foreground/40 blur-[2px] select-none">
-                    If engagement increases → Action A
-                  </span>
-                </div>
-                <div className="flex items-center gap-3 p-4 bg-secondary/40 border border-white/10 rounded-lg">
-                  <Lock className="w-4 h-4 text-muted-foreground/40 flex-shrink-0" />
-                  <span className="text-sm text-muted-foreground/40 blur-[2px] select-none">
-                    If engagement stalls → Action B
-                  </span>
-                </div>
+                {lockedSteps.map((item) => (
+                  <div 
+                    key={item.step}
+                    className="group flex items-start gap-3 p-4 bg-secondary/30 border border-white/10 rounded-lg cursor-not-allowed hover:border-red-500/20 transition-colors"
+                  >
+                    <Lock className="w-4 h-4 text-muted-foreground/40 mt-0.5 flex-shrink-0 group-hover:text-red-500/50 transition-colors" />
+                    <div>
+                      <p className="text-sm font-semibold text-muted-foreground/50 mb-1">Step {item.step}</p>
+                      <span className="text-sm text-muted-foreground/40 blur-[2px] select-none">
+                        {item.title}
+                      </span>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
 
@@ -414,24 +324,22 @@ const DecisionSystemDemo = () => {
                 href="#cta"
                 className="block w-full text-center bg-primary text-primary-foreground font-bold py-5 px-8 rounded-xl text-lg md:text-xl transition-all duration-300 hover:shadow-[0_0_50px_rgba(255,213,0,0.5)] animate-[pulse_3s_ease-in-out_1]"
               >
-                🔓 Unlock My Exact Next Steps
+                🔓 Unlock the Traffic System for This Store
               </a>
-              <p className="text-center text-sm text-muted-foreground/80 mt-4">
-                Stop guessing. Follow the system that adapts as your store does.
-              </p>
-              <p className="text-center text-xs text-muted-foreground/50 mt-2">
-                (Most people unlock this after wasting money guessing.)
+              <p className="text-center text-sm sm:text-base text-muted-foreground/80 mt-4">
+                One-time access.<br className="sm:hidden" />
+                <span className="hidden sm:inline"> </span>Use it for every store you ever launch.
               </p>
             </div>
 
             {/* Final Psychological Anchor */}
             <div className="mt-12 md:mt-16 text-center pb-4">
-              <p className="text-base sm:text-lg md:text-lg text-muted-foreground leading-relaxed mb-2">
-                This isn't advice.
+              <p className="text-base sm:text-lg md:text-lg text-foreground/90 leading-relaxed font-medium mb-3">
+                You don't need more tutorials.
               </p>
-              <p className="text-lg sm:text-xl md:text-xl text-foreground/90 font-medium leading-relaxed">
-                It's a decision system that removes guesswork —<br className="hidden sm:block" />
-                at the exact moment most beginners panic.
+              <p className="text-lg sm:text-xl md:text-xl text-muted-foreground leading-relaxed">
+                You need something that tells you what traffic to send —<br className="hidden sm:block" />
+                right now.
               </p>
             </div>
             
