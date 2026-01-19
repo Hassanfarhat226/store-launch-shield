@@ -233,32 +233,61 @@ const DecisionSystemDemo = () => {
               </span>
             </div>
 
-            {/* System Confidence Proof */}
-            <div className="bg-secondary/30 border border-white/10 rounded-xl p-5 mb-6">
-              <p className="text-sm font-semibold text-foreground mb-4">
-                How the system reached this decision
+            {/* System Comparison Snapshot */}
+            <div className="bg-secondary/20 border border-white/5 rounded-xl p-5 mb-6">
+              <p className="text-sm font-semibold text-foreground mb-1">
+                System Comparison Snapshot
               </p>
-              <div className="space-y-2 mb-4">
-                <div className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-primary" />
-                  <span className="text-sm text-muted-foreground">Matched against early-stage store patterns</span>
+              <p className="text-xs text-muted-foreground/60 mb-5">
+                This decision is based on real outcomes — not opinion.
+              </p>
+              
+              <div className="space-y-2.5 font-mono text-sm">
+                <div className="flex items-center gap-3">
+                  <span className="w-1.5 h-1.5 bg-primary/60 rounded-full flex-shrink-0" />
+                  <span className="text-muted-foreground">Matched against:</span>
+                  <span className="text-foreground font-semibold">10,367</span>
+                  <span className="text-muted-foreground/70">early-stage stores</span>
                 </div>
-                <div className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-primary" />
-                  <span className="text-sm text-muted-foreground">Traffic maturity evaluated</span>
+                <div className="w-full h-px bg-white/5" />
+                <div className="flex items-center gap-3">
+                  <span className="w-1.5 h-1.5 bg-primary/60 rounded-full flex-shrink-0" />
+                  <span className="text-muted-foreground">Compared to:</span>
+                  <span className="text-foreground font-semibold">1,584</span>
+                  <span className="text-muted-foreground/70">stores launched in last 30 days</span>
                 </div>
-                <div className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-primary" />
-                  <span className="text-sm text-muted-foreground">Variable contamination detected</span>
+                <div className="w-full h-px bg-white/5" />
+                <div className="flex items-center gap-3">
+                  <span className="w-1.5 h-1.5 bg-primary/60 rounded-full flex-shrink-0" />
+                  <span className="text-muted-foreground">Pattern alignment:</span>
+                  <span className="text-foreground font-semibold">92%</span>
+                  <span className="text-muted-foreground/70">match to stores that delayed changes</span>
                 </div>
-                <div className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-primary" />
-                  <span className="text-sm text-foreground font-medium">Decision confidence: High</span>
+                <div className="w-full h-px bg-white/5" />
+                <div className="flex items-center gap-3">
+                  <span className="w-1.5 h-1.5 bg-red-500/60 rounded-full flex-shrink-0" />
+                  <span className="text-muted-foreground">False-negative risk detected:</span>
+                  <span className="text-red-400 font-semibold">High</span>
+                </div>
+                <div className="w-full h-px bg-white/5" />
+                <div className="flex items-center gap-3">
+                  <span className="w-1.5 h-1.5 bg-primary/60 rounded-full flex-shrink-0" />
+                  <span className="text-muted-foreground">Decision confidence:</span>
+                  <span className="text-primary font-semibold">0.91</span>
                 </div>
               </div>
-              <p className="text-xs text-muted-foreground/60 italic">
-                Full rule logic unlocks after purchase.
+
+              <p className="text-xs text-muted-foreground/50 mt-5">
+                Full classification logic and thresholds unlock after purchase.
               </p>
+
+              {/* Locked micro-tease */}
+              <div className="flex items-center gap-2 mt-4 pt-4 border-t border-white/5">
+                <Lock className="w-3.5 h-3.5 text-muted-foreground/40" />
+                <span className="text-xs text-muted-foreground/40 blur-[1px] select-none">
+                  What the other 8% did differently
+                </span>
+              </div>
             </div>
 
             {/* Required Next Action - Partial Preview */}
