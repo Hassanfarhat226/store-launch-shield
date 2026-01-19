@@ -88,35 +88,35 @@ const DecisionSystemDemo = () => {
   const isCheckpointLocked = (id: number) => id > currentCheckpoint;
 
   return (
-    <section className="mb-14 px-2">
+    <section className="mb-14 px-4 md:px-2">
       {/* Header */}
-      <div className="text-center mb-10 max-w-3xl mx-auto">
-        <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-foreground mb-5 leading-tight">
+      <div className="text-center mb-8 md:mb-10 max-w-3xl mx-auto">
+        <h2 className="text-[1.75rem] leading-[1.2] sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 md:mb-5">
           You Just Built the Store.<br />
           <span className="text-primary">This Is the System That Tells You What To Do Next.</span>
         </h2>
-        <p className="text-base md:text-lg text-foreground/80 max-w-2xl mx-auto leading-relaxed mb-3">
-          This is a live preview of the First Traffic Checkpoint™ —<br />
+        <p className="text-base sm:text-lg md:text-xl text-foreground/80 max-w-2xl mx-auto leading-relaxed mb-3">
+          This is a live preview of the First Traffic Checkpoint™ —<br className="hidden sm:block" />
           the same system you'll use every time you launch or test a store.
         </p>
-        <p className="text-sm md:text-base text-muted-foreground max-w-xl mx-auto leading-relaxed">
-          You're not expected to "get results" yet.<br />
+        <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-xl mx-auto leading-relaxed">
+          You're not expected to "get results" yet.<br className="hidden sm:block" />
           You're expected to interpret the right signals at the right time.
         </p>
       </div>
 
       {/* Why These Questions Look Simple */}
       {!showResult && (
-        <div className="max-w-2xl mx-auto mb-10 bg-secondary/30 border border-white/10 rounded-xl p-6">
-          <p className="text-base md:text-lg font-semibold text-foreground mb-3">
+        <div className="max-w-2xl mx-auto mb-8 md:mb-10 bg-secondary/30 border border-white/10 rounded-xl p-5 md:p-6">
+          <p className="text-lg sm:text-xl md:text-xl font-semibold text-foreground mb-3">
             Why these questions look simple
           </p>
-          <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-3">
-            Early-stage stores don't fail because of complex problems.<br />
+          <p className="text-base sm:text-base md:text-lg text-muted-foreground leading-relaxed mb-3">
+            Early-stage stores don't fail because of complex problems.<br className="hidden sm:block" />
             They fail because beginners misread early data and change the wrong thing.
           </p>
-          <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
-            This system doesn't guess.<br />
+          <p className="text-base sm:text-base md:text-lg text-muted-foreground leading-relaxed">
+            This system doesn't guess.<br className="hidden sm:block" />
             It classifies your situation and tells you what to do — or what NOT to touch.
           </p>
         </div>
@@ -155,7 +155,7 @@ const DecisionSystemDemo = () => {
                       )}
                     </div>
                     <div>
-                      <p className={`text-base md:text-lg font-semibold ${
+                      <p className={`text-lg sm:text-lg md:text-xl font-semibold leading-snug ${
                         isCheckpointLocked(checkpoint.id) ? 'text-muted-foreground/50' : 'text-foreground'
                       }`}>
                         {checkpoint.title}
@@ -225,52 +225,52 @@ const DecisionSystemDemo = () => {
         {showResult && (
           <div className="animate-fade-in">
             {/* Decision Badge - Action-Framed */}
-            <div className="text-center mb-8">
-              <span className="inline-flex items-center gap-3 px-8 py-4 rounded-full text-lg md:text-xl font-bold bg-primary text-primary-foreground shadow-[0_0_40px_rgba(255,213,0,0.45)]">
-                <AlertTriangle className="w-5 h-5" />
+            <div className="text-center mb-6 md:mb-8">
+              <span className="inline-flex flex-wrap items-center justify-center gap-2 sm:gap-3 px-5 sm:px-8 py-3 sm:py-4 rounded-full text-xl sm:text-xl md:text-2xl font-bold bg-primary text-primary-foreground shadow-[0_0_40px_rgba(255,213,0,0.45)]">
+                <AlertTriangle className="w-5 h-5 sm:w-6 sm:h-6" />
                 HOLD & OBSERVE
-                <span className="text-sm font-medium opacity-90">(Action Required)</span>
+                <span className="text-xs sm:text-sm font-medium opacity-90">(Action Required)</span>
               </span>
             </div>
 
             {/* System Comparison Snapshot */}
-            <div className="bg-secondary/20 border border-white/5 rounded-xl p-5 mb-6">
-              <p className="text-sm font-semibold text-foreground mb-1">
+            <div className="bg-secondary/20 border border-white/5 rounded-xl p-4 sm:p-5 mb-6">
+              <p className="text-base sm:text-lg font-semibold text-foreground mb-1">
                 System Comparison Snapshot
               </p>
-              <p className="text-xs text-muted-foreground/60 mb-5">
+              <p className="text-xs sm:text-sm text-muted-foreground/60 mb-4 sm:mb-5">
                 This decision is based on real outcomes — not opinion.
               </p>
               
-              <div className="space-y-2.5 font-mono text-sm">
-                <div className="flex items-center gap-3">
+              <div className="space-y-2 sm:space-y-2.5 font-mono text-xs sm:text-sm">
+                <div className="flex flex-wrap items-center gap-1.5 sm:gap-3">
                   <span className="w-1.5 h-1.5 bg-primary/60 rounded-full flex-shrink-0" />
                   <span className="text-muted-foreground">Matched against:</span>
                   <span className="text-foreground font-semibold">10,367</span>
                   <span className="text-muted-foreground/70">early-stage stores</span>
                 </div>
                 <div className="w-full h-px bg-white/5" />
-                <div className="flex items-center gap-3">
+                <div className="flex flex-wrap items-center gap-1.5 sm:gap-3">
                   <span className="w-1.5 h-1.5 bg-primary/60 rounded-full flex-shrink-0" />
                   <span className="text-muted-foreground">Compared to:</span>
                   <span className="text-foreground font-semibold">1,584</span>
                   <span className="text-muted-foreground/70">stores launched in last 30 days</span>
                 </div>
                 <div className="w-full h-px bg-white/5" />
-                <div className="flex items-center gap-3">
+                <div className="flex flex-wrap items-center gap-1.5 sm:gap-3">
                   <span className="w-1.5 h-1.5 bg-primary/60 rounded-full flex-shrink-0" />
                   <span className="text-muted-foreground">Pattern alignment:</span>
                   <span className="text-foreground font-semibold">92%</span>
-                  <span className="text-muted-foreground/70">match to stores that delayed changes</span>
+                  <span className="text-muted-foreground/70 break-words">match to stores that delayed changes</span>
                 </div>
                 <div className="w-full h-px bg-white/5" />
-                <div className="flex items-center gap-3">
+                <div className="flex flex-wrap items-center gap-1.5 sm:gap-3">
                   <span className="w-1.5 h-1.5 bg-red-500/60 rounded-full flex-shrink-0" />
-                  <span className="text-muted-foreground">False-negative risk detected:</span>
+                  <span className="text-muted-foreground">False-negative risk:</span>
                   <span className="text-red-400 font-semibold">High</span>
                 </div>
                 <div className="w-full h-px bg-white/5" />
-                <div className="flex items-center gap-3">
+                <div className="flex flex-wrap items-center gap-1.5 sm:gap-3">
                   <span className="w-1.5 h-1.5 bg-primary/60 rounded-full flex-shrink-0" />
                   <span className="text-muted-foreground">Decision confidence:</span>
                   <span className="text-primary font-semibold">0.91</span>
@@ -291,8 +291,8 @@ const DecisionSystemDemo = () => {
             </div>
 
             {/* Required Next Action - Partial Preview */}
-            <div className="bg-secondary/40 border border-primary/30 rounded-xl p-6 mb-6">
-              <p className="text-base md:text-lg font-bold text-foreground mb-4">
+            <div className="bg-secondary/40 border border-primary/30 rounded-xl p-4 sm:p-6 mb-6">
+              <p className="text-lg sm:text-xl md:text-xl font-bold text-foreground mb-4">
                 Your Required Next Action (Partial Preview)
               </p>
               
@@ -383,12 +383,12 @@ const DecisionSystemDemo = () => {
             </div>
 
             {/* Fork in the Road */}
-            <div className="bg-secondary/30 border border-white/10 rounded-xl p-6 mb-8">
-              <p className="text-base md:text-lg font-bold text-foreground mb-3">
+            <div className="bg-secondary/30 border border-white/10 rounded-xl p-4 sm:p-6 mb-8">
+              <p className="text-lg sm:text-xl md:text-xl font-bold text-foreground mb-3">
                 What happens next depends on ONE thing
               </p>
-              <p className="text-sm text-muted-foreground mb-5">
-                The next step is different depending on what happens first.<br />
+              <p className="text-sm sm:text-base text-muted-foreground mb-5">
+                The next step is different depending on what happens first.<br className="hidden sm:block" />
                 Most people guess. The system doesn't.
               </p>
               
@@ -426,11 +426,11 @@ const DecisionSystemDemo = () => {
 
             {/* Final Psychological Anchor */}
             <div className="mt-12 md:mt-16 text-center pb-4">
-              <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-2">
+              <p className="text-base sm:text-lg md:text-lg text-muted-foreground leading-relaxed mb-2">
                 This isn't advice.
               </p>
-              <p className="text-base md:text-lg text-foreground/90 font-medium leading-relaxed">
-                It's a decision system that removes guesswork —<br />
+              <p className="text-lg sm:text-xl md:text-xl text-foreground/90 font-medium leading-relaxed">
+                It's a decision system that removes guesswork —<br className="hidden sm:block" />
                 at the exact moment most beginners panic.
               </p>
             </div>
