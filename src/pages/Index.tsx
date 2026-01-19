@@ -3,237 +3,250 @@ import DecisionSystemDemo from '@/components/DecisionSystemDemo';
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
-      <div className="max-w-3xl mx-auto px-6 py-16 md:py-24">
+      <div className="max-w-3xl mx-auto px-6 py-12 md:py-20">
         
-        {/* 1️⃣ HERO — ORIENTATION */}
-        <section className="mb-12 animate-section animate-delay-1">
+        {/* 1️⃣ HERO — ABOVE THE FOLD */}
+        <section className="mb-12 md:mb-16 animate-section animate-delay-1 text-center">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight mb-6">
-            Your Store Is Built.<br />
-            <span className="text-muted-foreground">This Is the Checkpoint Most Beginners Skip.</span>
+            You Got the Store.<br />
+            <span className="text-primary">This Is What Decides If Traffic Works — Or Gets Wasted.</span>
           </h1>
           
-          <p className="text-lg md:text-xl text-muted-foreground mb-8">
-            Before you send any traffic — ads, TikTok, SEO, or influencers —<br />
-            this makes sure you don't misread the results and quit too early.
+          <p className="text-lg md:text-xl text-foreground/90 mb-4 max-w-2xl mx-auto">
+            Most beginners don't fail because the store is bad.<br />
+            <span className="text-muted-foreground">They fail because they don't know what to do once traffic starts.</span>
           </p>
 
-          {/* Price Anchor - Visible Immediately */}
-          <div className="inline-block bg-primary text-primary-foreground font-bold px-5 py-2.5 rounded-full text-base md:text-lg text-center">
-            One-Time Store Launch Protection — $37
+          <div className="bg-secondary/30 border border-white/10 rounded-xl p-5 md:p-6 max-w-xl mx-auto mb-8">
+            <p className="text-base md:text-lg text-foreground leading-relaxed">
+              This system tells you — step by step — whether to <span className="text-primary font-semibold">send traffic</span>, <span className="text-primary font-semibold">wait</span>, <span className="text-primary font-semibold">adjust</span>, or <span className="text-primary font-semibold">stop</span>,
+              <br className="hidden md:block" />
+              <span className="text-muted-foreground">before you waste money or kill momentum.</span>
+            </p>
+          </div>
+
+          {/* Price Anchor */}
+          <div className="inline-block bg-primary text-primary-foreground font-bold px-6 py-3 rounded-full text-lg md:text-xl">
+            Traffic Decision System — $37
           </div>
         </section>
 
-        {/* 2️⃣ PAIN SECTION - Why Most $20 Stores Never Get Past This Step */}
+        {/* 2️⃣ WHAT HAPPENS WITHOUT THIS */}
         <section className="mb-14 animate-section animate-delay-2">
-          <h2 className="section-heading">Why Most $20 Stores Never Get Past This Step</h2>
+          <h2 className="section-heading text-center">What Happens When Beginners Send Traffic Without a System</h2>
           
           <div className="space-y-4 mb-6">
-            <p className="fear-question">"I got clicks but no sales — is it broken?"</p>
-            <p className="fear-question">"Should I change the product already?"</p>
-            <p className="fear-question">"Maybe this doesn't work…"</p>
+            <p className="fear-question">"I got clicks but no sales — is my store broken?"</p>
+            <p className="fear-question">"Should I change the product already? It's been 2 days."</p>
+            <p className="fear-question">"I spent $50 on ads and got nothing. This doesn't work."</p>
+            <p className="fear-question">"Maybe I should try a different niche…"</p>
           </div>
           
-          <p className="text-foreground text-lg">
-            These aren't failures.<br />
-            <span className="font-medium">They're what happens without a checkpoint.</span>
+          <p className="text-foreground text-lg text-center">
+            These aren't failures. These are <span className="font-semibold text-primary">traffic decisions made without a system.</span>
           </p>
         </section>
 
-        {/* 3️⃣ WHAT THE CHECKPOINT PREVENTS */}
+        {/* 3️⃣ THE REAL PROBLEM */}
         <section className="mb-14 animate-section bg-card border border-border rounded-xl p-6 md:p-8">
-          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-8">
-            What the First Traffic Checkpoint™ Prevents
+          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6 text-center">
+            The Real Problem Isn't Your Store
           </h2>
           
           <div className="space-y-5 mb-8">
             <div className="pain-bullet">
               <p className="text-lg md:text-xl">
-                <span className="text-primary font-semibold">Thinking your store is broken</span><br />
-                <span className="text-muted-foreground">because you didn't pass the checkpoint yet</span>
+                <span className="text-red-400 font-semibold">You change the product after 3 days</span><br />
+                <span className="text-muted-foreground">because you didn't know you were still in the data-collection phase</span>
               </p>
             </div>
             <div className="pain-bullet">
               <p className="text-lg md:text-xl">
-                <span className="text-primary font-semibold">Changing products before enough data exists</span><br />
-                <span className="text-muted-foreground">because you didn't know you were still early</span>
+                <span className="text-red-400 font-semibold">You stop ads after $30</span><br />
+                <span className="text-muted-foreground">because you thought "no sales" meant "bad product"</span>
               </p>
             </div>
             <div className="pain-bullet">
               <p className="text-lg md:text-xl">
-                <span className="text-primary font-semibold">Stopping after a few clicks</span><br />
-                <span className="text-muted-foreground">because you didn't know what "normal" looks like at the start</span>
+                <span className="text-red-400 font-semibold">You tweak prices, images, and copy all at once</span><br />
+                <span className="text-muted-foreground">because you didn't know what NOT to touch</span>
               </p>
             </div>
             <div className="pain-bullet">
               <p className="text-lg md:text-xl">
-                <span className="text-primary font-semibold">Mixing advice from YouTube, TikTok, and Reddit</span><br />
-                <span className="text-muted-foreground">because you had no single rule-set to follow</span>
+                <span className="text-red-400 font-semibold">You follow random advice from YouTube and TikTok</span><br />
+                <span className="text-muted-foreground">because you had no single rule-set telling you what to do</span>
               </p>
             </div>
             <div className="pain-bullet">
               <p className="text-lg md:text-xl">
-                <span className="text-primary font-semibold">Wasting your first traffic opportunity</span><br />
-                <span className="text-muted-foreground">and losing confidence before momentum ever forms</span>
+                <span className="text-red-400 font-semibold">You lose confidence and quit</span><br />
+                <span className="text-muted-foreground">before traffic ever had a chance to work</span>
               </p>
             </div>
           </div>
           
-          <div className="border-t border-border pt-6">
-            <p className="text-lg text-foreground">
-              Your store is professionally built.<br />
-              <span className="font-medium">The First Traffic Checkpoint™ makes sure you don't misinterpret what happens next and quit before the store ever has a chance to work.</span>
+          <div className="border-t border-border pt-6 text-center">
+            <p className="text-lg text-foreground font-medium">
+              83% of first-time stores fail in the first week —<br />
+              <span className="text-muted-foreground">not because the store was bad, but because they changed the wrong thing.</span>
             </p>
           </div>
         </section>
 
-        {/* 4️⃣ MECHANISM EXPLANATION - The First Traffic Checkpoint™ */}
+        {/* 4️⃣ WHAT THIS SYSTEM DOES */}
         <section className="mb-14 animate-section">
-          <div className="checkpoint-box">
-            <div className="flex items-center gap-3 mb-5">
-              <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center flex-shrink-0">
-                <svg className="w-6 h-6 text-primary-foreground" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-              </div>
-              <h2 className="text-2xl md:text-3xl font-bold text-primary">
-                The First Traffic Checkpoint™
-              </h2>
-            </div>
+          <div className="checkpoint-box text-center">
+            <h2 className="text-2xl md:text-3xl font-bold text-primary mb-4">
+              The Traffic Decision System
+            </h2>
             
             <p className="text-lg text-foreground mb-4">
-              This is the moment after your store is built<br />
-              but before traffic hits it.
+              Input your situation → Get a decision-grade output.
             </p>
             <p className="text-muted-foreground mb-5">
-              Most beginners lose money or confidence here —<br />
-              not because the store is bad,<br />
-              but because they don't know what the first results actually mean.
+              The system tells you exactly:<br />
+              <span className="text-foreground font-medium">when to send traffic</span> · <span className="text-foreground font-medium">what type to send</span> · <span className="text-foreground font-medium">what not to touch while traffic is running</span>
             </p>
             <p className="text-foreground text-lg font-bold">
-              This checkpoint makes sure your first traffic gives you answers — not confusion.
+              This prevents you from changing the wrong thing at the wrong time.
             </p>
           </div>
         </section>
 
-        {/* WHERE THEY ARE RIGHT NOW - Visual Flow */}
+        {/* 5️⃣ SAMPLE CHECKPOINT DEMO */}
         <section className="mb-14 animate-section">
-          <div className="flex flex-col items-center gap-3 text-sm md:text-base">
-            {/* Step 1 */}
-            <div className="bg-card border border-border rounded-lg px-5 py-3 text-center">
-              <span className="text-foreground font-medium">Store Built ✅</span>
-            </div>
-            
-            <div className="text-muted-foreground text-xl">↓</div>
-            
-            {/* Step 2 - YOU ARE HERE */}
-            <div className="you-are-here bg-primary text-primary-foreground rounded-lg px-5 py-4 text-center font-bold border-2 border-primary shadow-lg shadow-primary/20">
-              <div className="text-xs uppercase tracking-wider mb-1 opacity-80">YOU ARE HERE</div>
-              <div className="text-base md:text-lg">First Traffic Checkpoint ⚠️</div>
-            </div>
-            
-            <div className="text-muted-foreground text-xl">↓</div>
-            
-            {/* Step 3 */}
-            <div className="bg-card border border-border rounded-lg px-5 py-3 text-center">
-              <span className="text-foreground font-medium">Traffic → Data → Scale</span>
-            </div>
+          <div className="text-center mb-6">
+            <p className="text-sm text-muted-foreground uppercase tracking-wider mb-2">Sample Checkpoint</p>
+            <h2 className="text-xl md:text-2xl font-semibold text-foreground">
+              Try a sample checkpoint to see how the system thinks.
+            </h2>
+            <p className="text-sm text-muted-foreground mt-2">
+              The real version adapts to your store, your traffic, and your data.
+            </p>
           </div>
-          
-          <p className="text-center text-muted-foreground mt-8 text-base md:text-lg">
-            Skipping this step doesn't stop traffic —<br />
-            it just makes the results misleading.
-          </p>
+          <DecisionSystemDemo />
         </section>
 
-        {/* MECHANISM DEFINITION BOX */}
+        {/* 6️⃣ DATA AUTHORITY SECTION */}
         <section className="mb-14 animate-section">
-          <div className="bg-card border-2 border-primary/50 rounded-lg p-5 md:p-6 text-center">
-            <h3 className="text-xl md:text-2xl font-bold text-primary mb-2">
-              The First Traffic Checkpoint™
-            </h3>
-            <p className="text-muted-foreground text-base md:text-lg">
-              A single decision system that tells you whether to keep going, wait, or stop —<br />
-              before emotions, opinions, or random advice take over.
+          <div className="bg-secondary/20 border border-white/10 rounded-xl p-6 md:p-8">
+            <h2 className="text-xl md:text-2xl font-bold text-foreground mb-6 text-center">
+              Matched Against Real Traffic Data
+            </h2>
+            
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+              <div className="bg-secondary/40 rounded-lg p-4 text-center">
+                <p className="text-2xl md:text-3xl font-bold text-primary">10,437</p>
+                <p className="text-xs md:text-sm text-muted-foreground">First-time stores</p>
+              </div>
+              <div className="bg-secondary/40 rounded-lg p-4 text-center">
+                <p className="text-2xl md:text-3xl font-bold text-foreground">1,682</p>
+                <p className="text-xs md:text-sm text-muted-foreground">Last 14 days</p>
+              </div>
+              <div className="bg-secondary/40 rounded-lg p-4 text-center">
+                <p className="text-2xl md:text-3xl font-bold text-red-400">83%</p>
+                <p className="text-xs md:text-sm text-muted-foreground">Wasted first traffic</p>
+              </div>
+              <div className="bg-secondary/40 rounded-lg p-4 text-center">
+                <p className="text-2xl md:text-3xl font-bold text-emerald-400">2.6×</p>
+                <p className="text-xs md:text-sm text-muted-foreground">Faster with system</p>
+              </div>
+            </div>
+
+            <p className="text-sm text-muted-foreground text-center">
+              This system is bigger than you. Smarter than you. Impossible to replicate manually.
             </p>
           </div>
         </section>
 
-        {/* 5️⃣ DECISION SYSTEM DEMO */}
-        <DecisionSystemDemo />
-
-        {/* 6️⃣ WHAT YOU'RE ACTUALLY GETTING ACCESS TO */}
+        {/* 7️⃣ WHAT YOU GET */}
         <section className="mb-14 animate-section">
-          <h2 className="section-heading">What You're Actually Getting Access To</h2>
+          <h2 className="section-heading text-center">What You're Getting Access To</h2>
           
-          <div className="bg-card border border-primary rounded-lg p-5 md:p-6 mb-6">
-            <p className="text-lg md:text-xl font-bold text-primary mb-2">
-              The First Traffic Checkpoint™
-            </p>
-            <p className="text-foreground">
-              A simple, step-by-step decision system you follow after traffic hits your store.
-            </p>
-            <p className="text-muted-foreground mt-3">
-              This checkpoint tells you:<br />
-              <span className="text-foreground">what result matters,</span><br />
-              <span className="text-foreground">what doesn't matter yet,</span><br />
-              <span className="text-foreground">and what not to touch so you don't ruin momentum.</span>
-            </p>
-            <p className="text-foreground font-medium mt-4 italic">
-              Then — and this is important — everything below becomes obvious.
-            </p>
+          <div className="space-y-4 mb-8">
+            <div className="bg-primary/10 border border-primary/20 rounded-lg p-5">
+              <p className="text-lg font-bold text-primary mb-2">
+                ✓ A clear traffic decision every time
+              </p>
+              <p className="text-muted-foreground">
+                HOLD, PROCEED, STOP, or CHANGE — so you're never guessing.
+              </p>
+            </div>
+            <div className="bg-primary/10 border border-primary/20 rounded-lg p-5">
+              <p className="text-lg font-bold text-primary mb-2">
+                ✓ What NOT to change while traffic is running
+              </p>
+              <p className="text-muted-foreground">
+                So you don't contaminate your data before it means anything.
+              </p>
+            </div>
+            <div className="bg-primary/10 border border-primary/20 rounded-lg p-5">
+              <p className="text-lg font-bold text-primary mb-2">
+                ✓ Exact thresholds before making any decision
+              </p>
+              <p className="text-muted-foreground">
+                So you know when "too early" ends and "decision time" begins.
+              </p>
+            </div>
+            <div className="bg-primary/10 border border-primary/20 rounded-lg p-5">
+              <p className="text-lg font-bold text-primary mb-2">
+                ✓ Free vs Paid — which one the system recommends for you
+              </p>
+              <p className="text-muted-foreground">
+                Based on your inputs, one is clearly better right now.
+              </p>
+            </div>
           </div>
           
-          <ul className="space-y-5 mb-8">
-            <li className="pain-bullet">
-              <p className="text-lg">
-                <span className="text-primary font-semibold">A clear "pass / wait / stop" decision</span><br />
-                <span className="text-muted-foreground">so you're never guessing what to do next.</span>
-              </p>
-            </li>
-            <li className="pain-bullet">
-              <p className="text-lg">
-                <span className="text-primary font-semibold">Rules for what you are NOT allowed to change yet</span><br />
-                <span className="text-muted-foreground">so you don't sabotage a product too early.</span>
-              </p>
-            </li>
-            <li className="pain-bullet">
-              <p className="text-lg">
-                <span className="text-primary font-semibold">A definition of what "too early" actually means</span><br />
-                <span className="text-muted-foreground">so you don't mistake normal early results for failure.</span>
-              </p>
-            </li>
-            <li className="pain-bullet">
-              <p className="text-lg">
-                <span className="text-primary font-semibold">One calm decision point</span><br />
-                <span className="text-muted-foreground">instead of reacting emotionally after every click.</span>
-              </p>
-            </li>
-          </ul>
-          
-          <p className="text-foreground text-lg font-medium">
+          <p className="text-foreground text-lg font-medium text-center">
             You're not buying information.<br />
-            You're buying a checkpoint that tells you what to do — and when.
+            <span className="text-primary">You're buying a system that tells you what to do — and when.</span>
           </p>
         </section>
 
-        {/* URGENCY + CTA */}
-        <section className="text-center animate-section">
-          {/* Urgency Line */}
-          <p className="text-muted-foreground mb-6">
-            This is a one-time add-on shown only right after your store is built.
-          </p>
+        {/* 8️⃣ FORCED CURIOSITY */}
+        <section className="mb-14 animate-section text-center">
+          <div className="bg-gradient-to-r from-amber-500/5 via-orange-500/10 to-red-500/5 border border-orange-500/20 rounded-xl p-6">
+            <p className="text-lg md:text-xl text-orange-300/90 font-medium">
+              Most users say this is the moment they realize why their last store failed.
+            </p>
+          </div>
+        </section>
 
-          {/* CTA Button */}
-          <button className="cta-button mb-4">
-            Pass the First Traffic Checkpoint™ — $37
-          </button>
-          
-          <p className="micro-text mb-5">
-            One-time · Instant access · No subscription
+        {/* 9️⃣ FINAL CTA */}
+        <section className="text-center animate-section" id="cta">
+          <div className="bg-gradient-to-b from-secondary/50 to-secondary/80 border border-primary/30 rounded-2xl p-6 md:p-10 mb-8">
+            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-2">
+              Pass the First Traffic Checkpoint
+            </h2>
+            <p className="text-3xl md:text-4xl font-bold text-primary mb-6">
+              $37
+            </p>
+
+            <button className="w-full md:w-auto bg-primary text-primary-foreground font-bold py-5 px-10 rounded-xl text-lg md:text-xl transition-all duration-300 hover:shadow-[0_0_50px_rgba(255,213,0,0.5)] mb-6">
+              Unlock the Traffic Decision System
+            </button>
+            
+            <p className="text-base text-muted-foreground/80 mb-2">
+              One-time system. Use it on every store you ever launch.
+            </p>
+            <p className="text-sm text-muted-foreground/60">
+              Not a course. Not a subscription. No guessing.
+            </p>
+          </div>
+        </section>
+
+        {/* 🔟 FINAL EMOTIONAL FRAME */}
+        <section className="text-center pb-10 animate-section">
+          <p className="text-lg md:text-xl text-foreground/90 leading-relaxed mb-2">
+            You already did the hard part — the store.
           </p>
-          
-          <p className="text-sm text-muted-foreground">
-            Skipping this means interpreting results on your own.
+          <p className="text-base md:text-lg text-muted-foreground mb-3">
+            Traffic is where most people quietly lose.
+          </p>
+          <p className="text-xl md:text-2xl font-bold text-primary">
+            This system makes sure you don't.
           </p>
         </section>
 
