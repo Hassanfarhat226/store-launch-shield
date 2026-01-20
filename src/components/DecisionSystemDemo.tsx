@@ -169,23 +169,15 @@ const DecisionSystemDemo = () => {
 
   return (
     <section className="mb-14 px-4 md:px-2">
-      {/* Hero Header */}
+      {/* Section Header - Danger Zone Framing */}
       <div className="text-center mb-8 md:mb-12 max-w-3xl mx-auto">
         <h2 className="text-[1.75rem] leading-[1.15] sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-5 md:mb-6">
-          You Got the Store.<br />
-          <span className="text-primary">This Is What Decides If Traffic Works — Or Gets Wasted.</span>
+          This Is Where Most Stores <span className="text-red-400">Lose Money</span> — Or <span className="text-primary">Gain Clarity</span>
         </h2>
-        <p className="text-base sm:text-lg md:text-xl text-foreground/90 max-w-2xl mx-auto leading-relaxed mb-4">
-          Most beginners don't fail because the store is bad.<br className="hidden sm:block" />
-          <span className="text-muted-foreground">They fail because they don't know what to do once traffic starts.</span>
+        <p className="text-base sm:text-lg md:text-xl text-foreground/90 max-w-2xl mx-auto leading-relaxed">
+          The store isn't the hard part.<br className="hidden sm:block" />
+          <span className="text-muted-foreground">Knowing what to do after traffic starts is what determines whether you win or stall.</span>
         </p>
-        <div className="bg-secondary/30 border border-white/10 rounded-xl p-4 sm:p-5 max-w-xl mx-auto">
-          <p className="text-sm sm:text-base text-foreground leading-relaxed">
-            This system tells you — step by step — whether to <span className="font-semibold text-primary">send traffic</span>, <span className="font-semibold text-primary">wait</span>, <span className="font-semibold text-primary">adjust</span>, or <span className="font-semibold text-primary">stop</span>,
-            <br className="hidden sm:block" />
-            <span className="text-muted-foreground">before you waste money or kill momentum.</span>
-          </p>
-        </div>
       </div>
 
       {/* Demo Section Title */}
