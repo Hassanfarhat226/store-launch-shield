@@ -24,14 +24,3 @@
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
-
-<script>
-  function sendHeight() {
-    const height = document.documentElement.scrollHeight;
-    window.parent.postMessage({ type: "IFRAME_HEIGHT", height }, "*");
-  }
-
-  window.addEventListener("load", sendHeight);
-  window.addEventListener("resize", sendHeight);
-</script>
-
