@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Check, Lock, ChevronDown, ChevronUp, AlertTriangle, XCircle, Zap } from 'lucide-react';
+import { Check, Lock, ChevronDown, ChevronUp, AlertTriangle, Zap, ClipboardCheck, Eye } from 'lucide-react';
 
 type TrafficDecision = 'HOLD_OBSERVE' | 'PROCEED_CONTROLLED' | 'DO_NOT_CHANGE' | 'STOP_CONTAMINATED';
 
@@ -11,7 +11,6 @@ interface DecisionState {
 }
 
 const getDecision = (q1: number, q2: number, q3: number): DecisionState => {
-  // Creates varied, specific, non-obvious states based on inputs
   if (q1 === 0 || q1 === 1) {
     return {
       type: 'HOLD_OBSERVE',
@@ -58,7 +57,7 @@ const DecisionSystemDemo = () => {
   const [isProcessing, setIsProcessing] = useState(false);
   const [processingCheckpoint, setProcessingCheckpoint] = useState<number | null>(null);
   const [showResult, setShowResult] = useState(false);
-  const [expandedSections, setExpandedSections] = useState<number[]>([0, 1]);
+  const [expandedSteps, setExpandedSteps] = useState<number[]>([1, 2]);
 
   const checkpoints = [
     {
@@ -99,24 +98,53 @@ const DecisionSystemDemo = () => {
     }
   ];
 
-  const unlockedInsights = [
+  // Step 1-2: Visible, expanded by default
+  const visibleSteps = [
     {
-      title: "Why the system reached this decision",
-      content: `Based on your inputs, the system detected a 73% pattern match with stores at your exact stage. The decision threshold wasn't met because traffic signals require a minimum baseline before any action becomes statistically meaningful. Stores that acted before this threshold had a 4.2× higher failure rate in week one. This isn't intuition — it's pattern recognition across 10,437 store launches.`
+      step: 1,
+      title: "What your situation actually indicates (not what it feels like)",
+      diagnosis: "You're in the early signal window — not failure.",
+      signals: [
+        { name: "Signal 1: Click-to-engagement quality", description: "(how visitors interact after landing)" },
+        { name: "Signal 2: Add-to-cart density per traffic batch", description: "(early purchase intent patterns)" },
+        { name: "Signal 3: Time-on-page vs bounce pattern", description: "(attention quality before exit)" }
+      ],
+      whyMatters: "These 3 signals tell the system whether you have usable data — not whether your store \"works.\" Most beginners misread silence as failure. The system doesn't."
     },
     {
-      title: "What most beginners do wrong at this stage",
-      content: `The #1 mistake: changing something (price, product, ad creative) before traffic has time to generate usable data. 83% of failed stores made at least one premature change in the first 72 hours. The second mistake: interpreting "no sales" as "bad product" when it's actually "insufficient traffic volume." You would have guessed wrong on both.`
+      step: 2,
+      title: "The #1 mistake to avoid in the next 48 hours",
+      warning: "Do NOT touch: Product / pricing / layout — until the checkpoint says you have usable data.",
+      comparison: {
+        wrong: "What most people do: See zero sales → panic → change the product, price, or ad creative → contaminate all future data.",
+        right: "What the system does instead: Measure the signal window → compare against baseline patterns → only recommend changes when the data supports it."
+      },
+      bottomLine: "The system prevents reactive decisions that reset your traffic learning curve."
     }
   ];
 
+  // Steps 3-6: Locked with irresistible titles
   const lockedSteps = [
-    { step: 3, title: "Exact traffic actions to take in the next 48 hours", teaser: "Step-by-step traffic sequence calibrated to your current state" },
-    { step: 4, title: "When this decision changes — the exact trigger", teaser: "The specific threshold that flips HOLD → MOVE" },
-    { step: 5, title: "What NOT to touch (even if you're tempted)", teaser: "The 3 changes that look smart but kill momentum" },
-    { step: 6, title: "Free vs Paid: Which the system recommends for YOU", teaser: "Based on your inputs, one is clearly better right now" },
-    { step: 7, title: "The moment this flips — and what to do immediately", teaser: "Miss this window and you restart the cycle" },
-    { step: 8, title: "The #1 traffic mistake in week one", teaser: "This single error costs more than bad ads ever could" }
+    { 
+      step: 3, 
+      title: "Exact traffic actions for the next 48 hours (Free + Paid paths)", 
+      teaser: "A step-by-step traffic sequence based on your stage…" 
+    },
+    { 
+      step: 4, 
+      title: "The exact trigger that flips your decision (and what to do immediately)", 
+      teaser: "The moment you move from HOLD → PUSH…" 
+    },
+    { 
+      step: 5, 
+      title: "What NOT to touch (even if you panic)", 
+      teaser: "The 3 changes that kill momentum…" 
+    },
+    { 
+      step: 6, 
+      title: "Your recommended traffic method (Free vs Paid) — and why", 
+      teaser: "Which channel fits your store right now…" 
+    }
   ];
 
   const handleOptionSelect = (checkpointId: number, optionIndex: number) => {
@@ -138,11 +166,11 @@ const DecisionSystemDemo = () => {
     }, 800);
   };
 
-  const toggleSection = (index: number) => {
-    setExpandedSections(prev => 
-      prev.includes(index) 
-        ? prev.filter(i => i !== index)
-        : [...prev, index]
+  const toggleStep = (step: number) => {
+    setExpandedSteps(prev => 
+      prev.includes(step) 
+        ? prev.filter(s => s !== step)
+        : [...prev, step]
     );
   };
 
@@ -180,23 +208,24 @@ const DecisionSystemDemo = () => {
         </p>
       </div>
 
-      {/* Demo Section Title */}
-      {!showResult && (
-        <div className="max-w-2xl mx-auto mb-6 md:mb-8">
-          <div className="bg-secondary/20 border border-white/5 rounded-lg px-4 py-3 text-center mb-4">
-            <p className="text-xs sm:text-sm text-muted-foreground">
-              Try a sample checkpoint below to see how the system thinks.
-            </p>
-            <p className="text-xs text-muted-foreground/60 mt-1">
-              The real version adapts to your store, your traffic, and your data.
+      {/* Main Demo Container - Wider */}
+      <div className="max-w-3xl mx-auto">
+        
+        {/* CTA Instruction Bar - Highly Visible */}
+        {!showResult && (
+          <div className="bg-gradient-to-r from-primary/20 via-primary/15 to-primary/20 border-2 border-primary/40 rounded-xl p-5 sm:p-6 mb-8 text-center">
+            <div className="flex items-center justify-center gap-3 mb-2">
+              <ClipboardCheck className="w-6 h-6 text-primary" />
+              <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-foreground">
+                Answer 3 quick questions. Get a sample plan.
+              </h3>
+            </div>
+            <p className="text-sm sm:text-base text-muted-foreground">
+              This is a preview. The paid version generates the full step-by-step traffic plan.
             </p>
           </div>
-        </div>
-      )}
+        )}
 
-      {/* Main Demo Container */}
-      <div className="max-w-2xl mx-auto">
-        
         {/* Stacked Checkpoints */}
         {!showResult && (
           <div className="space-y-4">
@@ -315,89 +344,189 @@ const DecisionSystemDemo = () => {
               );
             })()}
 
-            {/* Traffic Pattern Match - Data Authority */}
-            <div className="bg-secondary/20 border border-white/5 rounded-xl p-4 sm:p-5 mb-6">
-              <p className="text-base sm:text-lg font-semibold text-foreground mb-4">
-                Traffic Pattern Match
-              </p>
-              
-              <div className="grid grid-cols-2 gap-3 mb-4">
-                <div className="bg-secondary/40 rounded-lg p-3 sm:p-4 text-center">
-                  <p className="text-xl sm:text-2xl font-bold text-primary">10,437</p>
-                  <p className="text-xs sm:text-sm text-muted-foreground">Stores analyzed</p>
-                </div>
-                <div className="bg-secondary/40 rounded-lg p-3 sm:p-4 text-center">
-                  <p className="text-xl sm:text-2xl font-bold text-foreground">1,682</p>
-                  <p className="text-xs sm:text-sm text-muted-foreground">Launched last 14 days</p>
-                </div>
+            {/* Your Custom Traffic Plan Section */}
+            <div className="mb-8">
+              <div className="text-center mb-6">
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground mb-2">
+                  Your Custom Traffic Plan <span className="text-primary">(Preview)</span>
+                </h3>
+                <p className="text-sm sm:text-base text-muted-foreground max-w-xl mx-auto">
+                  You'll get a step-by-step plan based on your answers. Below is a sample of how it's delivered.
+                </p>
               </div>
 
-              <div className="space-y-2 sm:space-y-2.5 font-mono text-xs sm:text-sm">
-                <div className="flex flex-wrap items-center gap-1.5 sm:gap-3">
-                  <span className="w-1.5 h-1.5 bg-red-500/60 rounded-full flex-shrink-0" />
-                  <span className="text-red-400 font-semibold">83%</span>
-                  <span className="text-muted-foreground/70">wasted traffic by changing the wrong thing first</span>
-                </div>
-                <div className="w-full h-px bg-white/5" />
-                <div className="flex flex-wrap items-center gap-1.5 sm:gap-3">
-                  <span className="w-1.5 h-1.5 bg-primary/60 rounded-full flex-shrink-0" />
-                  <span className="text-muted-foreground">Stores using this system reached clarity</span>
-                  <span className="text-primary font-semibold">2.6× faster</span>
-                </div>
-              </div>
-
-              <p className="text-xs text-muted-foreground/50 mt-4 text-center">
-                Based on traffic behavior patterns from paid + organic traffic sources
-              </p>
-            </div>
-
-            {/* Unlocked Insights - Collapsible */}
-            <div className="space-y-3 mb-6">
-              <p className="text-xs sm:text-sm text-muted-foreground/60 uppercase tracking-wider px-1">Unlocked Insights</p>
-              {unlockedInsights.map((insight, index) => (
-                <div key={index} className="bg-primary/5 border border-primary/20 rounded-xl overflow-hidden">
-                  <button
-                    onClick={() => toggleSection(index)}
-                    className="w-full flex items-center justify-between p-4 text-left hover:bg-primary/10 transition-colors"
-                  >
-                    <div className="flex items-center gap-3">
-                      <Check className="w-5 h-5 text-primary flex-shrink-0" />
-                      <span className="text-sm sm:text-base font-medium text-foreground">{insight.title}</span>
-                    </div>
-                    {expandedSections.includes(index) ? (
-                      <ChevronUp className="w-4 h-4 sm:w-5 sm:h-5 text-muted-foreground" />
-                    ) : (
-                      <ChevronDown className="w-4 h-4 sm:w-5 sm:h-5 text-muted-foreground" />
-                    )}
-                  </button>
-                  {expandedSections.includes(index) && (
-                    <div className="px-4 pb-4">
-                      <p className="text-xs sm:text-sm text-foreground/80 leading-relaxed pl-8">
-                        {insight.content}
-                      </p>
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
-
-            {/* Locked Steps */}
-            <div className="space-y-2 sm:space-y-3 mb-6">
-              <p className="text-xs sm:text-sm text-muted-foreground/60 uppercase tracking-wider px-1">Locked — Upgrade to Access</p>
-              {lockedSteps.map((item) => (
-                <div 
-                  key={item.step}
-                  className="group flex items-start gap-3 p-4 bg-secondary/30 border border-white/10 rounded-xl cursor-not-allowed hover:border-red-500/20 transition-colors"
-                >
-                  <Lock className="w-4 h-4 text-red-400/50 mt-0.5 flex-shrink-0 group-hover:text-red-400/70 transition-colors" />
-                  <div className="flex-1 min-w-0">
-                    <p className="text-sm sm:text-base font-medium text-muted-foreground/70">Step {item.step}: {item.title}</p>
-                    <p className="text-xs sm:text-sm text-muted-foreground/40 blur-[2px] select-none mt-1">
-                      {item.teaser}
-                    </p>
+              {/* System Basis - Credibility Numbers */}
+              <div className="bg-secondary/30 border border-white/10 rounded-lg p-4 mb-6">
+                <p className="text-xs text-muted-foreground/60 uppercase tracking-wider mb-3 text-center">System Basis</p>
+                <div className="flex flex-wrap justify-center gap-4 sm:gap-6 font-mono text-xs sm:text-sm">
+                  <div className="text-center">
+                    <span className="text-foreground font-semibold">10,437</span>
+                    <span className="text-muted-foreground ml-1">store launches matched</span>
+                  </div>
+                  <div className="text-center">
+                    <span className="text-foreground font-semibold">1,562</span>
+                    <span className="text-muted-foreground ml-1">recent beginner stores</span>
+                  </div>
+                  <div className="text-center">
+                    <span className="text-primary font-semibold">73%</span>
+                    <span className="text-muted-foreground ml-1">pattern match confidence</span>
                   </div>
                 </div>
-              ))}
+              </div>
+
+              {/* Step-By-Step Plan Label */}
+              <p className="text-sm sm:text-base text-primary font-semibold uppercase tracking-wider mb-4 flex items-center gap-2">
+                <Eye className="w-4 h-4" />
+                Step-By-Step Plan
+              </p>
+
+              {/* Step 1: Visible, WOW content */}
+              <div className="bg-primary/5 border border-primary/20 rounded-xl overflow-hidden mb-3">
+                <button
+                  onClick={() => toggleStep(1)}
+                  className="w-full flex items-center justify-between p-4 sm:p-5 text-left hover:bg-primary/10 transition-colors"
+                >
+                  <div className="flex items-center gap-3">
+                    <div className="w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-sm font-bold flex-shrink-0">
+                      1
+                    </div>
+                    <span className="text-base sm:text-lg font-semibold text-foreground">
+                      {visibleSteps[0].title}
+                    </span>
+                  </div>
+                  {expandedSteps.includes(1) ? (
+                    <ChevronUp className="w-5 h-5 text-muted-foreground flex-shrink-0" />
+                  ) : (
+                    <ChevronDown className="w-5 h-5 text-muted-foreground flex-shrink-0" />
+                  )}
+                </button>
+                {expandedSteps.includes(1) && (
+                  <div className="px-4 sm:px-5 pb-5 animate-fade-in">
+                    {/* Diagnosis Line */}
+                    <div className="bg-emerald-500/10 border border-emerald-500/30 rounded-lg p-3 mb-4 ml-11">
+                      <p className="text-sm sm:text-base">
+                        <span className="font-bold text-emerald-400">Diagnosis:</span>
+                        <span className="text-foreground ml-2">"{visibleSteps[0].diagnosis}"</span>
+                      </p>
+                    </div>
+
+                    {/* Signals the system is watching */}
+                    <div className="ml-11 space-y-2 mb-4">
+                      <p className="text-xs text-muted-foreground/70 uppercase tracking-wider mb-2">Signals the system is watching:</p>
+                      {visibleSteps[0].signals.map((signal, idx) => (
+                        <div key={idx} className="flex items-start gap-2 text-sm">
+                          <span className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0" />
+                          <div>
+                            <span className="text-foreground font-medium">{signal.name}</span>
+                            <span className="text-muted-foreground/70 ml-1">{signal.description}</span>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* Why this matters */}
+                    <div className="ml-11 bg-secondary/30 rounded-lg p-3">
+                      <p className="text-xs text-muted-foreground/60 uppercase tracking-wider mb-1">Why this matters:</p>
+                      <p className="text-sm text-foreground/80 leading-relaxed">
+                        {visibleSteps[0].whyMatters}
+                      </p>
+                    </div>
+                  </div>
+                )}
+              </div>
+
+              {/* Step 2: Visible, WOW content */}
+              <div className="bg-primary/5 border border-primary/20 rounded-xl overflow-hidden mb-6">
+                <button
+                  onClick={() => toggleStep(2)}
+                  className="w-full flex items-center justify-between p-4 sm:p-5 text-left hover:bg-primary/10 transition-colors"
+                >
+                  <div className="flex items-center gap-3">
+                    <div className="w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-sm font-bold flex-shrink-0">
+                      2
+                    </div>
+                    <span className="text-base sm:text-lg font-semibold text-foreground">
+                      {visibleSteps[1].title}
+                    </span>
+                  </div>
+                  {expandedSteps.includes(2) ? (
+                    <ChevronUp className="w-5 h-5 text-muted-foreground flex-shrink-0" />
+                  ) : (
+                    <ChevronDown className="w-5 h-5 text-muted-foreground flex-shrink-0" />
+                  )}
+                </button>
+                {expandedSteps.includes(2) && (
+                  <div className="px-4 sm:px-5 pb-5 animate-fade-in">
+                    {/* Warning Line */}
+                    <div className="bg-red-500/10 border border-red-500/30 rounded-lg p-3 mb-4 ml-11">
+                      <div className="flex items-start gap-2">
+                        <AlertTriangle className="w-5 h-5 text-red-400 flex-shrink-0 mt-0.5" />
+                        <p className="text-sm sm:text-base font-bold text-red-400">
+                          {visibleSteps[1].warning}
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* What most people do vs What the system does */}
+                    <div className="ml-11 space-y-3 mb-4">
+                      <div className="bg-red-500/5 border border-red-500/20 rounded-lg p-3">
+                        <p className="text-xs text-red-400/70 uppercase tracking-wider mb-1">❌ What most people do:</p>
+                        <p className="text-sm text-foreground/80">{visibleSteps[1].comparison.wrong}</p>
+                      </div>
+                      <div className="bg-emerald-500/5 border border-emerald-500/20 rounded-lg p-3">
+                        <p className="text-xs text-emerald-400/70 uppercase tracking-wider mb-1">✓ What the system does instead:</p>
+                        <p className="text-sm text-foreground/80">{visibleSteps[1].comparison.right}</p>
+                      </div>
+                    </div>
+
+                    {/* Bottom line */}
+                    <div className="ml-11 bg-secondary/30 rounded-lg p-3">
+                      <p className="text-sm text-foreground/90 font-medium">
+                        {visibleSteps[1].bottomLine}
+                      </p>
+                    </div>
+                  </div>
+                )}
+              </div>
+
+              {/* Divider before locked steps */}
+              <div className="border-t border-white/10 my-6" />
+
+              {/* Locked Steps Label */}
+              <p className="text-sm sm:text-base text-red-400/80 font-semibold uppercase tracking-wider mb-4 flex items-center gap-2">
+                <Lock className="w-4 h-4" />
+                Locked Steps (where the real plan is)
+              </p>
+
+              {/* Steps 3-6: Locked */}
+              <div className="space-y-3">
+                {lockedSteps.map((item) => (
+                  <div 
+                    key={item.step}
+                    className="group flex items-start gap-3 p-4 sm:p-5 bg-secondary/30 border border-white/10 rounded-xl cursor-not-allowed hover:border-red-500/20 transition-colors"
+                  >
+                    <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-sm font-bold text-muted-foreground/50 flex-shrink-0">
+                      {item.step}
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-start gap-2">
+                        <Lock className="w-4 h-4 text-red-400/50 mt-1 flex-shrink-0 group-hover:text-red-400/70 transition-colors" />
+                        <div>
+                          <p className="text-sm sm:text-base font-medium text-muted-foreground/70">
+                            Step {item.step}: {item.title}
+                          </p>
+                          <p className="text-xs sm:text-sm text-muted-foreground/40 blur-[2px] select-none mt-1">
+                            {item.teaser}
+                          </p>
+                          <p className="text-xs text-muted-foreground/50 mt-2">
+                            Unlocks with the full checkpoint
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
 
             {/* Forced Curiosity Line */}
