@@ -214,18 +214,19 @@ const Index = () => {
           </div>
         </section>
 
-        {/* 9️⃣ FINAL CTA */}
+        {/* 9️⃣ THE SYSTEM SECTION */}
         <section className="text-center animate-section" id="cta">
           <div className="bg-gradient-to-b from-secondary/50 to-secondary/80 border border-primary/30 rounded-2xl p-6 md:p-10 mb-8">
-            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-2">
-              Pass the First Traffic Checkpoint
+            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
+              This Is the System That Tells You What to Do With Traffic
             </h2>
-            <p className="text-3xl md:text-4xl font-bold text-primary mb-6">
-              $37
+            <p className="text-base md:text-lg text-muted-foreground mb-6 max-w-xl mx-auto">
+              Most beginners don't fail because their store is bad.<br />
+              They fail because they make the wrong traffic decision at the wrong time.
             </p>
 
             <button className="w-full md:w-auto bg-primary text-primary-foreground font-bold py-5 px-10 rounded-xl text-lg md:text-xl transition-all duration-300 hover:shadow-[0_0_50px_rgba(255,213,0,0.5)] mb-6">
-              Unlock the Traffic Decision System
+              Pass the First Traffic Checkpoint — $37
             </button>
             
             <p className="text-base text-muted-foreground/80 mb-2">
