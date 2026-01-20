@@ -87,6 +87,15 @@ export function generateDecision(inputs: CheckpointInputs): DecisionOutput | nul
       'Revenue path confirmed — optimize before scaling',
       'Data quality sufficient for next phase decisions'
     ];
+  } else if (stage === '15+d' && (situation === 'no-clicks' || situation === 'clicks-no-atc' || situation === 'confused')) {
+    // Check 15+ days FIRST before individual situation handlers
+    decision = 'SWITCH';
+    primaryReason = 'Extended timeline with no traction. It\'s time to test a different product or angle.';
+    signals = [
+      'Time investment exceeds reasonable test period',
+      'No viable signals after sustained effort',
+      'Opportunity cost too high to continue'
+    ];
   } else if (situation === 'no-clicks' && stage !== 'not-started' && stage !== '0-24h') {
     decision = 'FIX';
     primaryReason = 'Traffic is reaching your store but not engaging. The attention layer needs work.';
@@ -128,14 +137,6 @@ export function generateDecision(inputs: CheckpointInputs): DecisionOutput | nul
       'Variable contamination detected',
       'Cannot isolate cause/effect',
       'Reset and run controlled test required'
-    ];
-  } else if (stage === '15+d' && (situation === 'no-clicks' || situation === 'clicks-no-atc' || situation === 'confused')) {
-    decision = 'SWITCH';
-    primaryReason = 'Extended timeline with no traction. It\'s time to test a different product or angle.';
-    signals = [
-      'Time investment exceeds reasonable test period',
-      'No viable signals after sustained effort',
-      'Opportunity cost too high to continue'
     ];
   } else if (stage === 'not-started') {
     decision = 'SEND';
